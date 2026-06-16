@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Петербург — гид для гостьи · июнь 2026</title>
+<title>Петербург — недельный гид для гостьи · июнь 2026</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
@@ -15,87 +15,99 @@
     --amber:#C8893B; --amber-soft:#f6ecdd; --amber-ink:#9a6a26;
     --sky:#5b86a8; --sky-soft:#e6eef4; --sky-ink:#3f6585;
     --secret:#5a5550; --secret-soft:#ece7e2;
+    --red:#b8553f; --red-soft:#f6e3dd;
     --line:#ece4da; --shadow:0 1px 2px rgba(40,30,20,.04),0 8px 24px rgba(40,30,20,.06);
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
   body{margin:0;background:var(--cream);color:var(--ink);font-family:'Manrope',system-ui,sans-serif;line-height:1.5;-webkit-font-smoothing:antialiased}
-  .wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+  .wrap{max-width:1200px;margin:0 auto;padding:0 22px}
+  a{color:inherit}
 
-  /* ---------- HEADER ---------- */
-  header.hero{padding:54px 0 30px;border-bottom:1px solid var(--line)}
+  /* HEADER */
+  header.hero{padding:52px 0 28px;border-bottom:1px solid var(--line)}
   .kicker{font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.34em;text-transform:uppercase;color:var(--green-d);margin:0 0 14px}
-  h1.title{font-family:'Cormorant',serif;font-weight:600;font-size:clamp(40px,6vw,72px);line-height:1.02;margin:0 0 6px;letter-spacing:-.01em}
+  h1.title{font-family:'Cormorant',serif;font-weight:600;font-size:clamp(38px,6vw,70px);line-height:1.02;margin:0;letter-spacing:-.01em}
   h1.title em{font-style:italic;color:var(--green)}
-  .sub{font-size:17px;color:var(--ink-soft);max-width:680px;margin:14px 0 0}
+  .sub{font-size:17px;color:var(--ink-soft);max-width:700px;margin:14px 0 0}
   .meta-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
   .chip{font-family:'JetBrains Mono',monospace;font-size:12px;padding:7px 12px;border-radius:999px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft)}
   .chip b{color:var(--ink);font-weight:600}
+  .navjump{display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+  .navjump a{font-family:'Manrope';font-weight:600;font-size:13px;text-decoration:none;padding:8px 14px;border-radius:10px;background:var(--green);color:#fff;transition:.12s}
+  .navjump a.alt{background:var(--paper);color:var(--ink);border:1px solid var(--line)}
+  .navjump a:hover{opacity:.88}
 
-  /* ---------- WEATHER NOTE ---------- */
-  .note{background:var(--green-soft);border:1px solid #cfe6da;border-radius:16px;padding:18px 22px;margin:26px 0 8px;display:flex;gap:16px;align-items:flex-start}
-  .note .ic{font-size:26px;line-height:1}
-  .note p{margin:0;font-size:14.5px;color:#2c4a3c}
+  /* NOTE */
+  .note{background:var(--green-soft);border:1px solid #cfe6da;border-radius:16px;padding:16px 20px;margin:24px 0 6px;display:flex;gap:14px;align-items:flex-start}
+  .note .ic{font-size:24px;line-height:1}
+  .note p{margin:0;font-size:14px;color:#2c4a3c}
   .note b{color:var(--green-d)}
+  .note.red{background:var(--red-soft);border-color:#e8c9bf}
+  .note.red p{color:#7d3a28}.note.red b{color:var(--red)}
 
-  /* ---------- SECTION TITLES ---------- */
-  .sec-head{margin:48px 0 6px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
+  /* SECTION TITLES */
+  .sec-head{margin:46px 0 6px;display:flex;align-items:baseline;gap:14px;flex-wrap:wrap}
   .sec-head h2{font-family:'Cormorant',serif;font-weight:600;font-size:clamp(28px,4vw,42px);margin:0;letter-spacing:-.01em}
   .sec-head .tag{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--green-d)}
-  .lead{color:var(--ink-soft);font-size:15.5px;margin:8px 0 0;max-width:760px}
+  .lead{color:var(--ink-soft);font-size:15px;margin:8px 0 0;max-width:780px}
 
-  /* ---------- CURATED PROGRAM ---------- */
-  .program{margin:24px 0 10px;display:grid;grid-template-columns:1.15fr .85fr;gap:20px}
-  @media(max-width:820px){.program{grid-template-columns:1fr}}
-  .pcard{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:24px 24px 26px;box-shadow:var(--shadow)}
-  .pcard.hl{border-color:#bfe0cf;background:linear-gradient(180deg,#fbfefc, var(--paper))}
-  .pcard h3{font-family:'Cormorant',serif;font-size:27px;font-weight:600;margin:0 0 3px}
-  .pcard .pk{font-family:'JetBrains Mono',monospace;font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--green);margin:0 0 16px}
+  /* WEEK PROGRAM */
+  .daytabs{display:flex;flex-wrap:wrap;gap:8px;margin:22px 0 18px}
+  .daytab{font-family:'Manrope';font-weight:700;font-size:13px;padding:10px 15px;border-radius:12px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);cursor:pointer;transition:.12s;text-align:left;min-width:118px}
+  .daytab:hover{border-color:var(--green)}
+  .daytab.on{background:var(--green);border-color:var(--green);color:#fff}
+  .daytab .dn{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.14em;text-transform:uppercase;opacity:.75;display:block;margin-bottom:3px}
+  .daypanel{background:var(--paper);border:1px solid var(--line);border-radius:18px;padding:26px 28px 28px;box-shadow:var(--shadow)}
+  .daypanel h3{font-family:'Cormorant',serif;font-size:30px;font-weight:600;margin:0 0 2px}
+  .daypanel .dsub{font-size:14px;color:var(--ink-soft);margin:0 0 22px}
+  .daypanel .dsub b{color:var(--green-d)}
   .tl{list-style:none;margin:0;padding:0}
-  .tl li{position:relative;padding:0 0 16px 70px;min-height:24px}
+  .tl li{position:relative;padding:0 0 18px 78px;min-height:26px}
   .tl li:last-child{padding-bottom:0}
-  .tl li::before{content:"";position:absolute;left:50px;top:6px;bottom:-6px;width:2px;background:var(--green-soft)}
+  .tl li::before{content:"";position:absolute;left:58px;top:7px;bottom:-4px;width:2px;background:var(--green-soft)}
   .tl li:last-child::before{display:none}
-  .tl .tm{position:absolute;left:0;top:2px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--green-d)}
-  .tl .dot{position:absolute;left:45px;top:4px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2.5px solid #fff;box-shadow:0 0 0 1px var(--green)}
+  .tl .tm{position:absolute;left:0;top:1px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--green-d);width:50px;text-align:right}
+  .tl .dot{position:absolute;left:53px;top:3px;width:12px;height:12px;border-radius:50%;background:var(--green);border:2.5px solid #fff;box-shadow:0 0 0 1px var(--green)}
   .tl b{font-weight:700}
   .tl small{display:block;color:var(--ink-soft);font-size:13px;margin-top:2px}
-  .mod{margin:0 0 18px}
-  .mod:last-child{margin-bottom:0}
-  .mod .mh{font-family:'Manrope';font-weight:800;font-size:14px;margin:0 0 6px;color:var(--ink)}
-  .mod .mh .arrow{color:var(--green)}
-  .mod p{margin:0;font-size:13.5px;color:var(--ink-soft)}
-  .mod p .pin{color:var(--green-d);font-weight:600}
-  .berry{background:var(--brass-soft);border:1px dashed #e0c9a3;border-radius:14px;padding:16px 18px;margin-top:4px}
-  .berry .mh{color:var(--brass-ink)}
-  .berry p{color:#7a6033}
+  .tl .ev{display:inline-block;font-family:'JetBrains Mono',monospace;font-size:10px;background:var(--red-soft);color:var(--red);padding:2px 7px;border-radius:6px;margin-top:4px}
 
-  /* ---------- FILTER BAR ---------- */
-  .filterbar{position:sticky;top:0;z-index:30;background:rgba(250,246,240,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:14px 0;margin-top:40px}
-  .fb-inner{display:flex;flex-direction:column;gap:12px}
-  .search{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;max-width:380px}
+  /* ANCHORS */
+  .anchors{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:12px;margin:18px 0 6px}
+  .anc{background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:15px 16px;border-left:3px solid var(--green)}
+  .anc.star{border-left-color:var(--red);background:linear-gradient(180deg,#fdf4f1,var(--paper))}
+  .anc .ad{font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;color:var(--green-d);margin-bottom:5px}
+  .anc.star .ad{color:var(--red)}
+  .anc .at{font-size:13.5px;font-weight:600;margin-bottom:3px}
+  .anc .ax{font-size:12.5px;color:var(--ink-soft)}
+
+  /* FILTER BAR */
+  .filterbar{position:sticky;top:0;z-index:30;background:rgba(250,246,240,.9);backdrop-filter:blur(10px);border-bottom:1px solid var(--line);padding:13px 0;margin-top:26px}
+  .fb-inner{display:flex;flex-direction:column;gap:11px}
+  .search{display:flex;align-items:center;gap:10px;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 14px;max-width:400px}
   .search input{border:0;outline:0;background:transparent;font-family:'Manrope';font-size:15px;width:100%;color:var(--ink)}
   .search .si{opacity:.5}
-  .tabs{display:flex;flex-wrap:wrap;gap:7px}
-  .tab{font-family:'Manrope';font-weight:600;font-size:13px;padding:8px 13px;border-radius:10px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);cursor:pointer;transition:.12s;white-space:nowrap}
+  .tabs{display:flex;flex-wrap:wrap;gap:6px}
+  .tab{font-family:'Manrope';font-weight:600;font-size:12.5px;padding:7px 12px;border-radius:10px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);cursor:pointer;transition:.12s;white-space:nowrap}
   .tab:hover{border-color:var(--green);color:var(--ink)}
   .tab.on{background:var(--green);border-color:var(--green);color:#fff}
   .toggles{display:flex;flex-wrap:wrap;gap:7px;align-items:center}
   .seg{display:inline-flex;background:var(--paper);border:1px solid var(--line);border-radius:10px;overflow:hidden}
-  .seg button{font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:7px 11px;border:0;background:transparent;color:var(--ink-soft);cursor:pointer;transition:.12s}
+  .seg button{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 10px;border:0;background:transparent;color:var(--ink-soft);cursor:pointer;transition:.12s}
   .seg button.on{background:var(--ink);color:#fff}
-  .toggle{font-family:'JetBrains Mono',monospace;font-size:11.5px;padding:7px 12px;border-radius:10px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);cursor:pointer;transition:.12s;display:inline-flex;align-items:center;gap:6px}
+  .toggle{font-family:'JetBrains Mono',monospace;font-size:11px;padding:7px 12px;border-radius:10px;background:var(--paper);border:1px solid var(--line);color:var(--ink-soft);cursor:pointer;transition:.12s}
   .toggle.on{background:var(--green-soft);border-color:var(--green);color:var(--green-d)}
-  .seglabel{font-family:'JetBrains Mono',monospace;font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-soft);opacity:.7;align-self:center}
+  .seglabel{font-family:'JetBrains Mono',monospace;font-size:10px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft);opacity:.7;align-self:center}
   .count{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--ink-soft)}
   .count b{color:var(--green-d)}
 
-  /* ---------- CARD GRID ---------- */
-  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:18px;margin:26px 0 10px}
-  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:11px;transition:.14s}
-  .card:hover{transform:translateY(-2px);border-color:#dcd0c1;box-shadow:0 2px 4px rgba(40,30,20,.05),0 14px 32px rgba(40,30,20,.09)}
-  .card .badges{display:flex;flex-wrap:wrap;gap:6px}
-  .b{font-family:'JetBrains Mono',monospace;font-size:10.5px;font-weight:500;padding:4px 8px;border-radius:7px;letter-spacing:.02em;white-space:nowrap}
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px;margin:24px 0 10px}
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:16px;padding:18px 19px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px;transition:.14s}
+  .card:hover{transform:translateY(-2px);border-color:#dcd0c1}
+  .card .badges{display:flex;flex-wrap:wrap;gap:5px}
+  .b{font-family:'JetBrains Mono',monospace;font-size:10px;font-weight:500;padding:4px 7px;border-radius:6px;white-space:nowrap}
   .b.m-turist{background:var(--brass-soft);color:var(--brass-ink)}
   .b.m-mid{background:var(--green-soft);color:var(--green-d)}
   .b.m-hidden{background:var(--secret-soft);color:var(--secret)}
@@ -103,108 +115,87 @@
   .b.w-частично{background:var(--amber-soft);color:var(--amber-ink)}
   .b.w-открытое{background:var(--sky-soft);color:var(--sky-ink)}
   .b.tm{background:#f0ece6;color:var(--ink-soft)}
-  .card h4{font-family:'Cormorant',serif;font-weight:600;font-size:23px;line-height:1.1;margin:2px 0 0}
-  .card .desc{font-size:13.5px;color:var(--ink-soft);margin:0;flex-grow:1}
-  .card .info{display:flex;flex-direction:column;gap:5px;margin-top:2px}
-  .card .info div{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--ink-soft);display:flex;gap:7px;align-items:flex-start}
+  .b.date{background:var(--red-soft);color:var(--red);font-weight:600}
+  .card h4{font-family:'Cormorant',serif;font-weight:600;font-size:22px;line-height:1.1;margin:2px 0 0}
+  .card .desc{font-size:13px;color:var(--ink-soft);margin:0;flex-grow:1}
+  .card .info{display:flex;flex-direction:column;gap:4px;margin-top:1px}
+  .card .info div{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ink-soft);display:flex;gap:6px;align-items:flex-start}
   .card .info .ic{opacity:.6;flex-shrink:0}
-  .card .info .price{color:var(--green-d);font-weight:500}
-  .tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:3px}
-  .tg{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--ink-soft);background:transparent;border:1px solid var(--line);padding:3px 7px;border-radius:6px}
+  .card .info .price{color:var(--green-d)}
+  .row-bot{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:3px}
+  .tags{display:flex;flex-wrap:wrap;gap:4px}
+  .tg{font-family:'JetBrains Mono',monospace;font-size:9.5px;color:var(--ink-soft);border:1px solid var(--line);padding:3px 6px;border-radius:5px}
+  .book{font-family:'JetBrains Mono',monospace;font-size:11px;font-weight:600;text-decoration:none;padding:7px 12px;border-radius:9px;background:var(--ink);color:#fff;white-space:nowrap;transition:.12s;flex-shrink:0}
+  .book:hover{background:var(--green-d)}
   .empty{text-align:center;padding:60px 20px;color:var(--ink-soft);font-family:'JetBrains Mono',monospace;font-size:14px;display:none}
 
-  /* ---------- FOOTER ---------- */
   footer{margin:50px 0 70px;padding-top:26px;border-top:1px solid var(--line);color:var(--ink-soft);font-size:13px}
-  footer .disc{font-family:'JetBrains Mono',monospace;font-size:11.5px;line-height:1.7;color:var(--ink-soft);opacity:.85}
+  footer .disc{font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;opacity:.85}
   footer .sign{font-family:'Cormorant',serif;font-style:italic;font-size:19px;color:var(--green-d);margin-top:16px;letter-spacing:.04em}
   .spaced{font-family:'JetBrains Mono',monospace;letter-spacing:.4em;text-transform:uppercase;font-size:11px;color:var(--green-d)}
+  @media(max-width:560px){.tl li{padding-left:64px}.tl .tm{width:40px}.tl li::before{left:46px}.tl .dot{left:41px}}
 </style>
 </head>
 <body>
 
 <header class="hero">
   <div class="wrap">
-    <p class="kicker">Гид-расследование · супер-гид</p>
-    <h1 class="title">Петербург для гостьи —<br><em>не только открыточный</em></h1>
-    <p class="sub">Она из Москвы, видела главное, хочет внутрь Исаакия и что-нибудь неочевидное. Вы любите виды, кальян, она — клубнику. Погода пасмурная. Ниже — исчерпывающий список с фильтрами и готовая программа под ключ.</p>
+    <p class="kicker">Гид-расследование · супер-гид · 7 дней</p>
+    <h1 class="title">Петербург на неделю —<br><em>не только открыточный</em></h1>
+    <p class="sub">Она из Москвы, видела главное, хочет внутрь Исаакия и что-нибудь неочевидное. Вы любите виды, кальян, искусство, она — клубнику. Погода пасмурная, на дворе белые ночи. Ниже — готовая программа на 7 дней, датированные события июня 2026 и исчерпывающий список с фильтрами и ссылками на бронь.</p>
     <div class="meta-row">
       <span class="chip"><b>Июнь 2026</b> · белые ночи</span>
       <span class="chip">☁ Пасмурно → приоритет <b>крытым</b></span>
-      <span class="chip"><b>~80</b> проверенных мест</span>
+      <span class="chip"><b>160+</b> мест со ссылками брони</span>
       <span class="chip">Без Кронштадта / Петергофа / Пушкина</span>
+    </div>
+    <div class="navjump">
+      <a href="#program">⭐ Программа на неделю</a>
+      <a href="#anchors" class="alt">📅 Датированные события</a>
+      <a href="#list" class="alt">🗂 Полный список</a>
     </div>
   </div>
 </header>
 
 <div class="wrap">
 
+  <div class="note red">
+    <div class="ic">⛵</div>
+    <p><b>Главное событие окна — Алые Паруса, 27 июня (сб):</b> бриг с алыми парусами и грандиозный салют над Невой. Смотреть бесплатно с Английской набережной / стрелки Васильевского / наб. Лейтенанта Шмидта (Дворцовая — только по пригласительным выпускникам). Кульминация поздняя (бриг ~00:30), но весь вечер город бурлит. Если ваши даты захватывают 27-е — стройте финал недели вокруг него.</p>
+  </div>
   <div class="note">
     <div class="ic">🍓</div>
-    <p><b>Честно про клубнику:</b> самосбор на полях под Питером открывается в <b>июле</b> — к середине июня поля ещё закрыты (фермы стартуют 20 июня → июль, проверено по «Ягода Парк», «Ольховка», «ЧистоЯгода»). Сейчас реальна <b>тепличная</b> — на Кузнечном рынке, плюс клубничные десерты в городе. Настоящий «собери сам» лучше заложить отдельной поездкой на первые выходные июля (у «ЧистоЯгоды» есть тур с трансфером). За город сейчас едем не за клубникой, а за видами и сыроварней.</p>
+    <p><b>Честно про клубнику:</b> самосбор на полях открывается в <b>июле</b> — к 20-м числам июня поля ещё закрыты (фермы стартуют 20 июня → июль). Сейчас реальна <b>тепличная</b> на Кузнечном рынке + клубничные десерты. Замена «вкусного выезда» — сыроварня с дегустацией. Настоящий u-pick — отдельной поездкой в июле.</p>
   </div>
 
-  <!-- ===================== CURATED PROGRAM ===================== -->
+  <!-- WEEK PROGRAM -->
   <div class="sec-head" id="program">
-    <h2>Программа под ключ</h2>
+    <h2>Программа под ключ · 7 дней</h2>
     <span class="tag">рекомендовано к реализации</span>
   </div>
-  <p class="lead">Один насыщенный центральный день, устойчивый к пасмури (всё крытое или с крытой опцией), плюс модули второго дня — собрать под погоду и настроение.</p>
+  <p class="lead">Семь тематических дней — чередуют центр, искусство, загород, воду, релакс. Крытое (искусство, музеи, спа) — на серые дни; виды и залив — на ясные. Привязка к датам — ориентир под визит <b>~20–27 июня</b>; сдвиньте дни под свои числа. Жми день:</p>
+  <div class="daytabs" id="daytabs"></div>
+  <div class="daypanel" id="daypanel"></div>
 
-  <div class="program">
-    <div class="pcard hl">
-      <h3>День 1 · Классический Петербург с изнанкой</h3>
-      <p class="pk">центр пешком · крыто-устойчивый</p>
-      <ul class="tl">
-        <li><span class="tm">10:00</span><span class="dot"></span><b>Исаакиевский собор, интерьер</b><small>≈1 ч с аудиогидом. Тепло и сухо — её просьба закрыта первым делом. 450 ₽.</small></li>
-        <li><span class="tm">11:15</span><span class="dot"></span><b>Колоннада</b> — если без дождя<small>360° на центр, +40 мин, 600 ₽. В морось пропустить — фото будут блёклые.</small></li>
-        <li><span class="tm">12:15</span><span class="dot"></span><b>Особняк Половцова</b><small>Б. Морская 52, 7 мин пешком. Дворцовые залы, которых она не видела. По записи на слот.</small></li>
-        <li><span class="tm">13:45</span><span class="dot"></span><b>Обед: Мансарда</b><small>Почтамтская 3-5. Исаакий прямо в панорамном окне, вид крытый. Бронь.</small></li>
-        <li><span class="tm">15:30</span><span class="dot"></span><b>Новая Голландия</b><small>~15 мин пешком. Остров, «Бутылка» крытая, выставка «На ножках», кофе на газоне.</small></li>
-        <li><span class="tm">19:30</span><span class="dot"></span><b>Вечер: кальян + вид</b><small>Sky Bar (18 эт.) или Крыша 18. Главный «вау» дня. Бронь стола заранее.</small></li>
-      </ul>
-    </div>
-
-    <div class="pcard">
-      <h3>День 2 · модули на выбор</h3>
-      <p class="pk">собрать под погоду</p>
-
-      <div class="mod">
-        <p class="mh"><span class="arrow">→</span> За город (даже в пасмурно)</p>
-        <p><span class="pin">Сыроварня «Менестрель»</span> под Гатчиной — дегустация 7 сортов + мастер-класс, всё крытое, гастро-свидание. Или природа: <span class="pin">Линдуловская роща + Радоновые озёра</span> (бирюзовая вода), бесплатно.</p>
-      </div>
-
-      <div class="mod">
-        <p class="mh"><span class="arrow">→</span> Культурный день</p>
-        <p>Днём <span class="pin">музей Фаберже</span> (яйца, дворцовые залы) или <span class="pin">Эрарта</span>. Вечером — иммерсив <span class="pin">«Вернувшиеся»</span>: особняк, 2,5 ч полного погружения. Сильнейшее «вау».</p>
-      </div>
-
-      <div class="mod">
-        <p class="mh"><span class="arrow">→</span> Рабочее утро + лёгкий день</p>
-        <p><span class="pin">Coffee 3</span> на Петроградке — вид на крыши, розетки, можно сидеть с ноутом. Дальше прогулка по наб. Карповки.</p>
-      </div>
-
-      <div class="berry">
-        <p class="mh">＋＋ Клубничный ход</p>
-        <p>Тепличную клубнику взять на Кузнечном рынке, а полноценный самосбор — отдельной вылазкой в июле («ЧистоЯгода» с трансфером из города).</p>
-      </div>
-    </div>
+  <!-- DATED ANCHORS -->
+  <div class="sec-head" id="anchors">
+    <h2>Датированные якоря недели</h2>
+    <span class="tag">подгадайте под эти числа</span>
   </div>
+  <p class="lead">События с фиксированными датами июня 2026 — самое яркое, ради чего стоит подвинуть план. Даты проверены, но перед визитом сверьте афишу площадки.</p>
+  <div class="anchors" id="anchorsGrid"></div>
 
-  <!-- ===================== FULL LIST ===================== -->
+  <!-- FULL LIST -->
   <div class="sec-head" id="list">
     <h2>Полный список</h2>
-    <span class="tag">фильтры ниже</span>
+    <span class="tag">фильтры · ссылки брони</span>
   </div>
-  <p class="lead">Фильтруй по интересу, мейнстримности и погоде. <b>☂ крытое</b> — надёжно в пасмурный день; <b>☀ открытое</b> — только без осадков; <b>⛅ частично</b> — есть крытая опция.</p>
+  <p class="lead">Фильтруй по интересу, мейнстримности, погоде. <b>☂ крытое</b> — надёжно в пасмурь; <b>☀ открытое</b> — без осадков; <b>⛅ частично</b> — есть крытая опция. Кнопка <b>Сайт ↗</b> в карточке ведёт на бронь/инфо.</p>
 </div>
 
-<!-- FILTER BAR -->
 <div class="filterbar">
   <div class="wrap fb-inner">
-    <div class="search">
-      <span class="si">🔎</span>
-      <input id="q" type="text" placeholder="поиск: «вид», «кальян», «усадьба», район…">
-    </div>
+    <div class="search"><span class="si">🔎</span><input id="q" type="text" placeholder="поиск: «вид», «кальян», «устрицы», «модерн», район…"></div>
     <div class="tabs" id="tabs"></div>
     <div class="toggles">
       <span class="seglabel">кто знает</span>
@@ -231,334 +222,737 @@
   <div class="empty" id="empty">Ничего не нашлось — ослабь фильтры ↑</div>
 
   <footer>
-    <p class="disc">＞＞ Цены и часы с пометкой «уточнить» не выдуманы — официальной цифры 2026 в выдаче не было, проверь при брони.<br>
-    ＞＞ Даты выставок и событий меняются — сверяй афишу площадки перед визитом.<br>
-    ＞＞ Общепит и руфтопы часто переезжают/закрываются — звони и бронируй заранее, особенно вечерние видовые места по выходным.<br>
-    ＞＞ Особняки (Кельх, Брусницыных, Половцова, мозаичная мастерская, парадные) — почти все только по записи; многие туры идут бесплатно через проект «Открытый город» — проверь под даты.<br>
-    ＞＞ Смотровая Лахта Центр — билеты разлетаются за минуты (выкладывают 12:00–14:00, кроме чт), брать за 4–5 дней.</p>
-    <p class="sign">Собрано как супер-гидом — под пасмурный июнь и гостью, которая видела главное. <span class="spaced">Талисман</span></p>
+    <p class="disc">＞＞ Ссылки в карточках — официальные сайты, иначе restoclub / sputnik8 / tripster / афиша. Часть заведений за анти-бот защитой (Sky Bar, Sanctum) — откроются в браузере.<br>
+    ＞＞ Цены/часы с пометкой «уточнить» не выдуманы — официальной цифры 2026 не было, проверь при брони.<br>
+    ＞＞ Даты событий меняются — сверяй афишу площадки. Иммерсив «Вернувшиеся» в СПб, похоже, закрылся — проверить до похода.<br>
+    ＞＞ Топ-форматы (Мариинский, гастроли Большого, El Copitas, особняки Кельха/Брусницыных, Лахта-смотровая) бронируй сильно заранее.<br>
+    ＞＞ Особняки часто водят бесплатно через проект «Открытый город» — проверь под даты.</p>
+    <p class="sign">Собрано как супер-гидом — под белые ночи, пасмурный июнь и гостью, которая видела главное. <span class="spaced">Талисман</span></p>
   </footer>
 </div>
 
 <script>
+// ============ WEEK PROGRAM ============
+const DAYS = [
+  {k:"Д1", title:"Классика с изнанкой", sub:"центр пешком · крыто-устойчивый · разгон", items:[
+    {tm:"10:00", n:"Исаакиевский собор, интерьер", s:"Её просьба №1. Тепло и сухо — 450 ₽, ~1 ч с аудиогидом."},
+    {tm:"11:30", n:"Колоннада — если без дождя", s:"360° на центр, 600 ₽. В морось пропустить."},
+    {tm:"12:30", n:"Особняк Половцова", s:"Б. Морская 52, 7 мин. Дворцовые залы, которых она не видела. По записи."},
+    {tm:"14:00", n:"Обед: Мансарда", s:"Почтамтская 3-5. Исаакий в панорамном окне, крытый вид. Бронь."},
+    {tm:"16:00", n:"Новая Голландия", s:"Остров, «Бутылка», выставка «На ножках», кофе в AVA Bistro."},
+    {tm:"19:30", n:"Вечер: кальян + вид", s:"Sky Bar (18 эт.) или Крыша 18. Главный «вау» дня.", ev:"бронь стола"}
+  ]},
+  {k:"Д2", title:"Искусство и вернисажи", sub:"крытый день — идеален в пасмурь · современное искусство", items:[
+    {tm:"10:00", n:"Завтрак: Aster или Joli", s:"Маяковского 23 / Восстания 45Б. Культовые сырники, фотогеничный атриум."},
+    {tm:"12:00", n:"Marina Gisich Gallery", s:"Галерея совриска №1. «Земля» Пушницкого. Фонтанки 121."},
+    {tm:"13:30", n:"Anna Nova", s:"Жуковского 28. Вернисаж 19.06 — если попадёте, попадёте на открытие.", ev:"вернисаж 19.06"},
+    {tm:"15:30", n:"Главный штаб Эрмитажа", s:"Совриск Индии в стенах Эрмитажа. Дворцовая 6/8."},
+    {tm:"19:00", n:"Мариинский: балет/опера", s:"«Звёзды белых ночей». Билеты на mariinsky.ru заранее.", ev:"белые ночи"}
+  ]},
+  {k:"Д3", title:"Загород: Выборг", sub:"целый день · смена картинки · средневековье", items:[
+    {tm:"08:30", n:"Ласточка с Финляндского", s:"До Выборга 1 ч 15 мин. Билет на tutu.ru заранее."},
+    {tm:"10:30", n:"Выборгский замок + башня Олафа", s:"Единственный рыцарский замок в России. Смотровая 500 ₽."},
+    {tm:"13:00", n:"Парк Монрепо", s:"Скальный пейзажный парк у залива. Турист-автобус от вокзала."},
+    {tm:"15:00", n:"Обед в Выборге", s:"Кофейня «Пингвин» / рестораны старого города. Кренделя."},
+    {tm:"19:30", n:"Вечер дома: винный бар", s:"Bien Sûr или Big Wine Freaks — спокойно после дороги."}
+  ]},
+  {k:"Д4", title:"Васильевский + Севкабель + залив", sub:"вода и воздух · закат · современное", items:[
+    {tm:"10:00", n:"Завтрак на Ваське", s:"Civil (Биржевой) или Кофе и Вафли. Старт прогулки по линиям."},
+    {tm:"11:30", n:"Линии В.О. + наб. Лейтенанта Шмидта", s:"Андреевский рынок, дворы, виды на воду без толп."},
+    {tm:"15:00", n:"Севкабель Порт", s:"Набережная залива. 20-21.06 — фестивали «Матушка Земля» + Open Coffee.", ev:"фест 20-21.06"},
+    {tm:"18:00", n:"Закат + ужин Antonio Bistro", s:"Средиземноморское бистро Пинского с видом на залив."},
+    {tm:"21:00", n:"Концерт на крыше (если попадёт)", s:"Roof Fest / Radiohead-трибьют у воды, 19-21.06.", ev:"Roof Fest"}
+  ]},
+  {k:"Д5", title:"Релакс: спа, маркеты, вино", sub:"перезагрузка в середине недели · крытый", items:[
+    {tm:"11:00", n:"Медленное утро: Смена", s:"Басков 20. Творожники, кофе, без вайфая — про разговор."},
+    {tm:"13:00", n:"Спа/баня для двоих", s:"Дегтярные бани (класс) или хаммам-программа A2SPA. Бронь."},
+    {tm:"16:00", n:"Книжные + винтаж", s:"Подписные издания → Жёлтый двор → Au Pont Rouge / Kissa Market."},
+    {tm:"20:00", n:"Вечер: спикизи или вино", s:"El Copitas (бронь за дни) или винный Big Wine Freaks.", ev:"бронь заранее"}
+  ]},
+  {k:"Д6", title:"Петроградка модерн + новое", sub:"архитектура + гастро-новинки сезона", items:[
+    {tm:"10:00", n:"Завтрак: Bolshe Coffee", s:"В гроте Александровского парка — необычное утро."},
+    {tm:"11:30", n:"Каменноостровский модерн", s:"Музей модерна под открытым небом: Австрийская пл., мечеть, особняк Кшесинской."},
+    {tm:"14:30", n:"Каменный / Елагин острова", s:"Деревянные дачи, ЦПКиО, природа в городе. Если ясно."},
+    {tm:"19:30", n:"Ужин в новом месте", s:"El Copitas Русский / Белый Рябчик / Pont — гастрособытия 2026.", ev:"новое 2026"}
+  ]},
+  {k:"Д7", title:"Коломна + финал", sub:"тихий Питер · прощальный вечер · Алые Паруса (27.06)", items:[
+    {tm:"10:30", n:"Завтрак + Коломна пешком", s:"Самый атмосферный тихий район: семимостье, Никольский собор, наб. Пряжки."},
+    {tm:"13:00", n:"Музей-квартира Блока", s:"Декабристов 57. Литературный Петербург вживую."},
+    {tm:"15:00", n:"Музей Фаберже", s:"Императорские пасхальные яйца в Шуваловском дворце."},
+    {tm:"21:00", n:"Финал: Алые Паруса ИЛИ видовой ужин", s:"27.06 — бриг и салют с Английской наб. Иначе La Vue + белые ночи.", ev:"⭐ 27.06 Алые Паруса"}
+  ]}
+];
+
+// ============ DATED ANCHORS ============
+const ANCHORS = [
+  {d:"27 июня · сб", t:"⛵ Алые Паруса", x:"Бриг и салют над Невой. Бесплатно с набережных. Кульминация ~00:30.", star:true},
+  {d:"20–21 июня · сб-вс", t:"Севкабель: фестивали", x:"«Матушка Земля» (фолк+мода) + Open Coffee Fest. У залива.", star:true},
+  {d:"весь визит", t:"🎭 Звёзды белых ночей", x:"Мариинский: опера и балет почти каждый вечер. 26.06 — «Сила судьбы».", star:false},
+  {d:"11 июня – 2 июля", t:"🌉 Белые ночи + мосты", x:"Разводка мостов ~01:10. Прогулки по набережным в светлых сумерках.", star:false},
+  {d:"17 июня · ср", t:"🎨 KGallery: «Окно»", x:"Открытие выставки трёх поколений мастеров. Фонтанки 24.", star:false},
+  {d:"19 июня · пт", t:"🎨 Вернисаж Anna Nova", x:"Скульптура и видео-арт. + Roof Fest поп-симфо на крыше.", star:false},
+  {d:"20 июня · сб", t:"🎨 Кузькин на Левашовском", x:"Хлебные скульптуры на бывшем хлебозаводе. Открытие.", star:false},
+  {d:"27–28 июня · сб-вс", t:"🎪 ЭтоЭтно (бесплатно)", x:"Этно-опен-эйр у воды в Севкабеле. Альтернатива платным концертам.", star:false},
+  {d:"весь визит", t:"🖼 Пикассо в Брусницыне", x:"«Параграфы» в новом арт-квартале на В.О. До 8 ноября.", star:false},
+  {d:"весь визит", t:"🏛 Эрмитаж: Индия", x:"Совриск Индии в Главном штабе. До 4 октября.", star:false}
+];
+
+// ============ PLACES ============
 const PLACES = [
-  // ---------- ИСААКИЙ И MUST-SEE ----------
-  {n:"Исаакиевский собор · интерьер",c:"must",m:"turist",t:"любое",w:"крытое",
-   d:"Главный храм-музей: малахит и лазурит колонн, золочёный купол, мозаики. Внутри тепло и сухо — идеально под пасмурно. Её просьба №1.",
-   a:"Исаакиевская пл. 4 · м. Адмиралтейская",p:"10–18, ср выходной · 450 ₽ (льгот 300), вечер 700 ₽",g:["достопримечательность","культура","фото"]},
-  {n:"Колоннада Исаакия · смотровая",c:"must",m:"turist",t:"день",w:"открытое",
-   d:"Круговая галерея на 43 м, панорама центра 360°, ~200 ступеней. В морось — пропустить, картинка серая; хороша в ясь и на закат.",
+  // ===== MUST-SEE =====
+  {n:"Исаакиевский собор · интерьер",c:"must",m:"turist",t:"любое",w:"крытое",u:"https://cathedral.ru/ru/visitors/prices",
+   d:"Главный храм-музей: малахит, лазурит, золочёный купол, мозаики. Тепло и сухо — идеально в пасмурь. Её просьба №1.",
+   a:"Исаакиевская пл. 4 · м. Адмиралтейская",p:"10–18, ср выходной · 450 ₽ (вечер 700)",g:["достопримечательность","культура","фото"]},
+  {n:"Колоннада Исаакия · смотровая",c:"must",m:"turist",t:"день",w:"открытое",u:"https://cathedral.ru/ru/visitors/prices",
+   d:"Круговая галерея на 43 м, панорама 360°. В морось пропустить — хороша в ясь и на закат.",
    a:"тот же собор, вход отдельный",p:"10–18, май–сен до 21:30 · 600 ₽",g:["вид","фото","романтика"]},
 
-  // ---------- НЕОЧЕВИДНОЕ ----------
-  {n:"Особняк Половцова · Дом архитектора",c:"sights",m:"mid",t:"день",w:"крытое",
-   d:"Один из лучших сохранившихся дворцовых интерьеров: Дубовый зал XVI в., Белый и Бронзовый залы. В 7 мин от Исаакия.",
-   a:"Б. Морская 52 · м. Адмиралтейская",p:"только экскурсия, от ~667 ₽ · много слотов",g:["культура","фото","достопримечательность"]},
-  {n:"Особняк Кельха",c:"sights",m:"hidden",t:"день",w:"крытое",
+  // ===== НЕОЧЕВИДНОЕ =====
+  {n:"Особняк Половцова · Дом архитектора",c:"sights",m:"mid",t:"день",w:"крытое",u:"https://www.sputnik8.com/ru/st-petersburg/sights/architect-house",
+   d:"Один из лучших дворцовых интерьеров: Дубовый зал XVI в., Белый и Бронзовый залы. В 7 мин от Исаакия.",
+   a:"Б. Морская 52 · м. Адмиралтейская",p:"только экскурсия, от ~667 ₽",g:["культура","фото","достопримечательность"]},
+  {n:"Особняк Кельха",c:"sights",m:"hidden",t:"день",w:"крытое",u:"https://openspb.ru/afisha/",
    d:"Готическая столовая, будуар-рококо, парадная лестница — каждый зал в своём стиле. Здесь хранились яйца Фаберже.",
-   a:"ул. Чайковского 28 · м. Чернышевская",p:"только экскурсия по группе (паспорт), от ~590 ₽",g:["культура","фото","достопримечательность"]},
-  {n:"Особняк Брусницыных",c:"sights",m:"hidden",t:"день",w:"крытое",
-   d:"Заброшенно-роскошная эклектика: Белый бальный зал, мавританская кальянная, зеркало с легендой. Очень фотогенично.",
+   a:"ул. Чайковского 28 · м. Чернышевская",p:"экскурсия по группе (паспорт), от ~590 ₽",g:["культура","фото","достопримечательность"]},
+  {n:"Особняк Брусницыных",c:"sights",m:"hidden",t:"день",w:"крытое",u:"https://www.sputnik8.com/ru/st-petersburg/sights/osobnyak-brusnicynyh",
+   d:"Заброшенно-роскошная эклектика: Белый бальный зал, мавританская кальянная, зеркало с легендой. Фотогенично.",
    a:"Кожевенная линия 27 · Васильевский о.",p:"только экскурсия, от ~2300 ₽ · иногда бесплатно «Открытый город»",g:["культура","фото"]},
-  {n:"Дворец Белосельских-Белозерских",c:"sights",m:"mid",t:"день",w:"крытое",
+  {n:"Дворец Белосельских-Белозерских",c:"sights",m:"mid",t:"день",w:"крытое",u:"https://www.sputnik8.com/ru/st-petersburg/activities/60649-paradnye-zaly-dvortsa-beloselskih-belozerskih",
    d:"Необарочные залы на Невском: Зеркальный бальный зал, Дубовый, Малиновая гостиная. Доступно и недорого.",
    a:"Невский пр. 41 · м. Гостиный двор",p:"экскурсия 50–60 мин · 450 ₽",g:["культура","достопримечательность","фото"]},
-  {n:"Крыша и атриум Дома Зингера",c:"sights",m:"mid",t:"день",w:"частично",
-   d:"Стеклянный атриум, мозаичный пол, старинные лифты; по экскурсии — выход на крышу с видом на купол Казанского.",
-   a:"Невский пр. 28 · м. Невский проспект",p:"1 этаж свободно; крыша только экскурсия — уточнить",g:["вид","фото","культура"]},
-  {n:"Мозаичная мастерская Академии художеств",c:"sights",m:"hidden",t:"день",w:"крытое",
-   d:"Действующая с 1851 г.: здесь переводили в смальту фрески Исаакия и Спаса-на-Крови. Совсем не туристическое.",
-   a:"при Академии художеств · Васильевский о.",p:"по записи · ~380 ₽ (уточнить 2026)",g:["культура","фото"]},
-  {n:"Толстовский дом",c:"sights",m:"mid",t:"день",w:"частично",
-   d:"Дом Лидваля: три сквозных двора с арками от Рубинштейна до Фонтанки, парадные с лепниной. Дворы — свободно.",
-   a:"Рубинштейна 15-17 / Фонтанки 54",p:"дворы бесплатно; парадные — экскурсия, бронь",g:["прогулка","фото","достопримечательность"]},
-  {n:"Доходный дом Бака",c:"sights",m:"mid",t:"день",w:"частично",
+  {n:"Крыша и атриум Дома Зингера",c:"sights",m:"mid",t:"день",w:"частично",u:"https://dom-zingera.ru/",
+   d:"Стеклянный атриум, мозаичный пол, старинные лифты; по экскурсии — крыша с видом на купол Казанского.",
+   a:"Невский пр. 28 · м. Невский проспект",p:"крыша только экскурсия, пт+выходные",g:["вид","фото","культура"]},
+  {n:"Мозаичная мастерская Академии художеств",c:"sights",m:"hidden",t:"день",w:"крытое",u:"https://excurspb.ru/inter/museum/mozaichnaja-masterskaja/",
+   d:"Действующая с 1851 г.: здесь переводили в смальту фрески Исаакия и Спаса-на-Крови. Запись по телефону.",
+   a:"при Академии художеств · Васильевский о.",p:"группы 10-12 чел · ~380 ₽",g:["культура","фото"]},
+  {n:"Толстовский дом",c:"sights",m:"mid",t:"день",w:"частично",u:"https://www.sputnik8.com/ru/st-petersburg/sights/tolstoy-house",
+   d:"Дом Лидваля: три сквозных двора с арками от Рубинштейна до Фонтанки. Дворы — свободно.",
+   a:"Рубинштейна 15-17 / Фонтанки 54",p:"дворы бесплатно; парадные — экскурсия",g:["прогулка","фото","достопримечательность"]},
+  {n:"Доходный дом Бака",c:"sights",m:"mid",t:"день",w:"частично",u:"https://www.sputnik8.com/ru/st-petersburg/sights/bucks-house",
    d:"«Парящие» галереи-мостики через двор-колодец, кованые перила, витражи. Один из самых фотогеничных модерновых домов.",
-   a:"Кирочная 24 · м. Чернышевская",p:"двор виден при проходе; парадные — лучше экскурсия",g:["фото","прогулка","культура"]},
-  {n:"Витражные парадные Петроградки",c:"sights",m:"hidden",t:"день",w:"крытое",
-   d:"Подлинные модерновые витражи (кувшинки, готика) в парадных доходных домов. Доступ конкретных парадных меняется.",
-   a:"Петроградский р-н · м. Петроградская",p:"часть свободно; экскурсия «Витражи» от ~4000 ₽",g:["фото","культура"]},
-  {n:"Звонница Смольного собора",c:"sights",m:"mid",t:"день",w:"открытое",
-   d:"Смотровая выше колоннады Исаакия — ~50 м, панорама Невы и барочный бирюзовый собор Растрелли. Менее людно.",
-   a:"пл. Растрелли 1 · м. Чернышевская + транспорт",p:"~278 ступеней · пожертвование ~200–300 ₽ (уточнить)",g:["вид","фото","достопримечательность"]},
-  {n:"Магазин купцов Елисеевых",c:"sights",m:"mid",t:"любое",w:"крытое",
+   a:"Кирочная 24 · м. Чернышевская",p:"двор виден; парадные от ~830 ₽",g:["фото","прогулка","культура"]},
+  {n:"Звонница Смольного собора",c:"sights",m:"mid",t:"день",w:"открытое",u:"https://smolnysobor.tilda.ws/excursions",
+   d:"Смотровая выше колоннады Исаакия — 50 м, панорама Невы и барочный собор Растрелли. Менее людно. 278 ступеней.",
+   a:"пл. Растрелли 1 · м. Чернышевская",p:"смотровая 300 ₽, с гидом 450 ₽",g:["вид","фото","достопримечательность"]},
+  {n:"Магазин купцов Елисеевых",c:"sights",m:"mid",t:"любое",w:"крытое",u:"https://kupetzeliseevs.ru/",
    d:"Воссозданный модерн: витражи фасада, светильники-ландыши, центральный «ананас». Зайти бесплатно, как в магазин-музей.",
    a:"Невский пр. 56 · м. Гостиный двор",p:"вход свободный, ~10–23",g:["фото","культура","прогулка"]},
-  {n:"Чесменская церковь",c:"sights",m:"hidden",t:"день",w:"частично",
-   d:"Бело-розовая псевдоготика Фельтена — «торт со свечами», необычная для Питера, мало туристов. Эффектное фото в любую погоду.",
+  {n:"Чесменская церковь",c:"sights",m:"hidden",t:"день",w:"частично",u:"https://chesma.spb.ru/",
+   d:"Бело-розовая псевдоготика Фельтена — «торт со свечами», необычная для Питера, мало туристов.",
    a:"ул. Ленсовета 12 · м. Московская",p:"действующий храм, вход свободный",g:["достопримечательность","фото","прогулка"]},
 
-  // ---------- ПАРКИ И ПРОГУЛКИ ----------
-  {n:"Летний сад",c:"parks",m:"turist",t:"любое",w:"открытое",
-   d:"Главный исторический сад Петра I: беломраморные скульптуры, фонтаны, знаменитая решётка, Кофейный домик.",
+  // ===== ПАРКИ И ПРОГУЛКИ =====
+  {n:"Летний сад",c:"parks",m:"turist",t:"любое",w:"открытое",u:"https://rusmuseum.ru/summer-garden/",
+   d:"Главный сад Петра I: беломраморные скульптуры, фонтаны, знаменитая решётка, Кофейный домик.",
    a:"между Невой и Мойкой · м. Гостиный двор",p:"10–22, вт выходной · бесплатно",g:["прогулка","природа","романтика","фото"]},
-  {n:"Михайловский сад",c:"parks",m:"mid",t:"любое",w:"открытое",
+  {n:"Михайловский сад",c:"parks",m:"mid",t:"любое",w:"открытое",u:"https://rusmuseum.ru/mikhailovsky-garden/",
    d:"Французский регулярный + английский пейзажный по замыслу Росси. Тихий газон, виды на Спас-на-Крови.",
    a:"входы с Садовой и канала Грибоедова",p:"10–22 · бесплатно",g:["прогулка","природа","романтика","фото"]},
-  {n:"Таврический сад + оранжерея",c:"parks",m:"mid",t:"день",w:"частично",
-   d:"Английский парк с прудом; в оранжерее — тропические пальмы и сад бабочек (~50 видов). Оранжерея спасает в дождь.",
-   a:"м. Чернышевская",p:"сад бесплатно; оранжерея вт–вс 11–21, 250–500 ₽",g:["прогулка","природа","фото"]},
-  {n:"Сад Бенуа",c:"parks",m:"hidden",t:"день",w:"открытое",
-   d:"Бывшая усадьба-ферма архитектора Бенуа: зелёная зона + ресторан «Ферма Бенуа» с летней террасой. Локальное, не центр.",
-   a:"Тихорецкий пр. 17 · м. Академическая",p:"сад свободно; ресторан по часам",g:["прогулка","природа","романтика"]},
-  {n:"Александровский сад",c:"parks",m:"turist",t:"любое",w:"открытое",
-   d:"Зелёное сердце у Адмиралтейства: фонтан, памятники, виды на купол Исаакия и шпиль. Связка центральной прогулки.",
+  {n:"Таврический сад + оранжерея",c:"parks",m:"mid",t:"день",w:"частично",u:"https://2gis.ru/spb/search/Таврическая оранжерея",
+   d:"Английский парк с прудом; в оранжерее — тропические пальмы и сад бабочек. Оранжерея спасает в дождь.",
+   a:"Шпалерная 43 · м. Чернышевская",p:"сад бесплатно; оранжерея 250–500 ₽",g:["прогулка","природа","фото"]},
+  {n:"Александровский сад",c:"parks",m:"turist",t:"любое",w:"открытое",u:"",
+   d:"Зелёное сердце у Адмиралтейства: фонтан, памятники, виды на купол Исаакия. Связка центральной прогулки.",
    a:"между Дворцовой и Исаакием · м. Адмиралтейская",p:"бесплатно",g:["прогулка","природа","фото"]},
-  {n:"Новая Голландия",c:"parks",m:"turist",t:"любое",w:"частично",
-   d:"Остров-кластер, 14-й летний сезон с 28 мая 2026: концерты, кино, спектакли, «Бутылка» с кафе (крытое). Большой газон.",
+  {n:"Новая Голландия",c:"parks",m:"turist",t:"любое",w:"частично",u:"https://www.newhollandsp.ru/",
+   d:"Остров-кластер, летний сезон с 28 мая: концерты, кино, «Бутылка» с кафе, выставка «На ножках». Большой газон.",
    a:"наб. Адмиралтейского канала 2 · м. Адмиралтейская",p:"9–22, вход бесплатный; события платные",g:["прогулка","романтика","фото","культура"]},
-  {n:"Набережная реки Карповки",c:"parks",m:"hidden",t:"любое",w:"открытое",
+  {n:"Набережная реки Карповки",c:"parks",m:"hidden",t:"любое",w:"открытое",u:"",
    d:"Новый модный променад: амфитеатры-холмы, скамейки-смотровые у воды, вечерняя подсветка. Тихая альтернатива центру.",
    a:"Петроградская сторона · м. Петроградская",p:"бесплатно",g:["прогулка","природа","романтика"]},
-  {n:"Стрелка Васильевского острова",c:"parks",m:"turist",t:"любое",w:"открытое",
-   d:"Ростральные колонны, здание Биржи; одна из лучших панорам на Неву, Петропавловку и Зимний. Ветрено в пасмурь.",
+  {n:"Стрелка Васильевского острова",c:"parks",m:"turist",t:"любое",w:"открытое",u:"",
+   d:"Ростральные колонны, здание Биржи; одна из лучших панорам на Неву, Петропавловку и Зимний.",
    a:"Биржевая пл. · м. Адмиралтейская/Спортивная",p:"бесплатно",g:["прогулка","вид","романтика","фото"]},
-  {n:"Адмиралтейская набережная",c:"parks",m:"mid",t:"любое",w:"открытое",
-   d:"Парадная гранитная набережная Невы: спуски со львами, виды на Дворцовый мост и Стрелку. Смыкается с Алекс. садом.",
+  {n:"Адмиралтейская набережная",c:"parks",m:"mid",t:"любое",w:"открытое",u:"",
+   d:"Парадная гранитная набережная Невы: спуски со львами, виды на Дворцовый мост и Стрелку.",
    a:"от Дворцового до Сенатской · м. Адмиралтейская",p:"бесплатно",g:["прогулка","вид","романтика","фото"]},
-  {n:"Парк 300-летия + Яхтенный мост",c:"parks",m:"mid",t:"любое",w:"открытое",
-   d:"Набережная Финского залива с лучшим видом на Лахта Центр; через мост — переход на Крестовский. Закаты над заливом.",
+  {n:"Парк 300-летия + Яхтенный мост",c:"parks",m:"mid",t:"любое",w:"открытое",u:"",
+   d:"Набережная Финского залива с лучшим видом на Лахта Центр; через мост — переход на Крестовский. Закаты.",
    a:"Приморский р-н · м. Беговая",p:"бесплатно",g:["прогулка","вид","природа","фото"]},
-  {n:"Крестовский остров",c:"parks",m:"mid",t:"любое",w:"открытое",
-   d:"Большой зелёный остров: аллеи, пруды, прокат лодок/велосипедов. Сцепка с Парком 300-летия даёт длинный маршрут.",
+  {n:"Крестовский остров",c:"parks",m:"mid",t:"любое",w:"открытое",u:"",
+   d:"Большой зелёный остров: аллеи, пруды, прокат лодок/велосипедов. Сцепка с Парком 300-летия — длинный маршрут.",
    a:"м. Крестовский остров",p:"бесплатно; прокаты по тарифу",g:["прогулка","природа","романтика"]},
 
-  // ---------- ВИДЫ И СМОТРОВЫЕ ----------
-  {n:"Смотровая Лахта Центр",c:"views",m:"turist",t:"день",w:"крытое",
-   d:"Самая высокая смотровая России — 83–86 этажи, вид на залив и круизные лайнеры. Закрытая — идеальна в пасмурь. Но труднодоступна.",
-   a:"Лахта · м. Беговая + транспорт",p:"10–19, только группа · 2300 ₽ · билеты за 4–5 дней",g:["вид","фото"]},
-  {n:"Крыша «Лофт-проект Этажи»",c:"views",m:"mid",t:"любое",w:"открытое",
-   d:"Открытая крыша-кластер: газон, подушки, виды на купола и Петропавловку, ежедневный фестиваль коктейлей. Только без дождя.",
+  // ===== ВИДЫ И СМОТРОВЫЕ =====
+  {n:"Смотровая Лахта Центр",c:"views",m:"turist",t:"любое",w:"крытое",u:"https://lakhta.center/visitors/",
+   d:"Самая высокая смотровая Европы — 86 этаж, 360 м. Закрытая, идеальна в пасмурь. Только по экскурсии, бронь заранее.",
+   a:"Лахта · м. Беговая + транспорт",p:"10–20:30 · 1700–2100 ₽ · билеты онлайн за дни",g:["вид","фото","новое"]},
+  {n:"Крыша «Лофт-проект Этажи»",c:"views",m:"mid",t:"любое",w:"открытое",u:"https://www.loftprojectetagi.ru/visitors/krysha/",
+   d:"Открытая крыша-кластер: газон, виды на купола и Петропавловку, фестиваль коктейлей. Только без дождя.",
    a:"Лиговский пр. 74 · м. Лиговский проспект",p:"10–22 · 400 ₽ (наличные)",g:["вид","фото","романтика","коктейли"]},
-  {n:"Думская башня",c:"views",m:"mid",t:"любое",w:"открытое",
+  {n:"Думская башня",c:"views",m:"mid",t:"любое",w:"открытое",u:"https://dumatower.ru/",
    d:"Историческая башня на Невском, панорама центра, 233 ступени винтом. В самом сердце города. Детям до 12 нельзя.",
-   a:"Невский пр. 33 · м. Гостиный двор",p:"10–22, сеансы каждый час · 350 ₽ онлайн",g:["вид","фото"]},
-  {n:"Экскурсия по крышам (легальная)",c:"views",m:"mid",t:"любое",w:"открытое",
-   d:"Организованные прогулки по официальным крышам центра с гидом — виды на крыши и дворы старого Петербурга. В дождь переносят.",
+   a:"Невский пр. 33 · м. Гостиный двор",p:"сеансы каждые 30 мин · 300–500 ₽ онлайн",g:["вид","фото"]},
+  {n:"Экскурсия по крышам (легальная)",c:"views",m:"mid",t:"любое",w:"открытое",u:"https://www.sputnik8.com/ru/st-petersburg/category/kryshi",
+   d:"Прогулки по официальным крышам центра с гидом — виды на крыши и дворы старого Петербурга. В дождь переносят.",
    a:"центр, сбор у точки оператора",p:"от 350–590 ₽ · уточнить слоты",g:["вид","фото","романтика"]},
-  {n:"Прогулка на кораблике по рекам и каналам",c:"views",m:"turist",t:"любое",w:"частично",
-   d:"Дворцы и мосты с воды. ЕСТЬ застеклённые теплоходы — спасение в пасмурный день. Вечером — разводка мостов и белые ночи.",
-   a:"причалы в центре (Аничков, Мойка, Адмиралтейская)",p:"от ~600 ₽ · бери крытый борт",g:["прогулка","вид","романтика","фото"]},
+  {n:"Прогулка на кораблике по рекам",c:"views",m:"turist",t:"любое",w:"частично",u:"https://nevatrip.ru/",
+   d:"Дворцы и мосты с воды. ЕСТЬ застеклённые теплоходы — спасение в пасмурь. Вечером — разводка мостов, белые ночи.",
+   a:"причалы в центре (Аничков, Мойка)",p:"от ~600 ₽ · бери крытый борт",g:["прогулка","вид","романтика","фото"]},
 
-  // ---------- КЛУБНИКА И ЗАГОРОД ----------
-  {n:"Кузнечный рынок · клубника тепличная",c:"country",m:"mid",t:"день",w:"крытое",
-   d:"Реальный способ дать ей клубники в середине июня — тепличная и первая грунтовая уже здесь. Плюс атмосферный рынок в центре.",
-   a:"Кузнечный пер. 3 · м. Владимирская",p:"рыночные цены · ежедневно",g:["клубника","еда"]},
-  {n:"Сыроварня «Менестрель»",c:"country",m:"mid",t:"день",w:"крытое",
-   d:"Французская сыроварня под Гатчиной: экскурсия по производству + мастер-класс от сыровара + дегустация 7 сортов. Гастро-свидание, крытое.",
-   a:"пос. Пудость, Гатчинский р-н · на машине",p:"по записи · цена уточнить (menestrel.bio)",g:["ферма","романтика","загород","еда"]},
-  {n:"Ферма-сыроварня «Деревня»",c:"country",m:"mid",t:"день",w:"крытое",
+  // ===== РАЙОНЫ И МАРШРУТЫ =====
+  {n:"Коломна · самый атмосферный район",c:"districts",m:"mid",t:"любое",w:"открытое",u:"https://www.fiesta.ru/spb/routes/nado-znat-kolomna/",
+   d:"Меланхоличный тихий старый Питер между Фонтанкой, Мойкой и Крюковым каналом. Дворы-колодцы, дух литературного города. Пешком ~2 ч.",
+   a:"старт м. Садовая / Адмиралтейская",p:"свободно · готовый маршрут по ссылке",g:["район","прогулка","романтика","фото","культура"]},
+  {n:"Семимостье + Никольский собор",c:"districts",m:"mid",t:"любое",w:"открытое",u:"https://2gis.ru/spb/geo/70000001031566090",
+   d:"Точка, откуда видно семь мостов сразу — загадать желание. Рядом бирюзово-золотой барочный Никольский Морской собор.",
+   a:"Пикалов мост, Коломна · м. Садовая",p:"свободно",g:["фото","романтика","культура","прогулка"]},
+  {n:"Набережная Пряжки + музей Блока",c:"districts",m:"hidden",t:"день",w:"частично",u:"https://2gis.ru/spb/search/Музей-квартира Блока",
+   d:"Самые безлюдные интимные набережные Коломны. Тут последняя квартира Александра Блока с бытом начала XX в.",
+   a:"ул. Декабристов 57 · м. Адмиралтейская",p:"музей ~11–18, ср корот., вт вых. · уточнить",g:["культура","романтика","прогулка"]},
+  {n:"Линии Васильевского + Андреевский рынок",c:"districts",m:"mid",t:"любое",w:"открытое",u:"https://2gis.ru/spb/search/Андреевский рынок",
+   d:"Уникальная система «линий», архитектура XVIII–XX вв., старые дворы. Андреевский рынок — один из старейших, рядом пешеходная 6–7-я линия.",
+   a:"старт м. Василеостровская",p:"рынок ~10–21; прогулка свободно",g:["район","прогулка","фото"]},
+  {n:"Набережная Лейтенанта Шмидта",c:"districts",m:"mid",t:"любое",w:"открытое",u:"",
+   d:"Длинная невская набережная с кораблями, почти без туристов. Атмосфера портового Петербурга, закаты.",
+   a:"Васильевский о. · м. Василеостровская",p:"свободно",g:["прогулка","романтика","фото","вид"]},
+  {n:"Смоленское кладбище + часовня Ксении",c:"districts",m:"hidden",t:"день",w:"открытое",u:"https://2gis.ru/spb/search/Часовня Ксении Петербургской",
+   d:"Старое кладбище с вековыми деревьями; часовня блаженной Ксении — место паломничества, к стенам пишут записки. Тихо, созерцательно.",
+   a:"ул. Камская 24 · м. Приморская",p:"часовня ~10–18 · свободно",g:["культура","прогулка"]},
+  {n:"Двор-колодец В.О. (световой)",c:"districts",m:"hidden",t:"день",w:"частично",u:"https://www.sputnik8.com/ru/st-petersburg/pages/neobychnye-dvory-sankt-peterburga",
+   d:"Крошечный двор-колодец, где вместо крыши только каркас на фоне неба — поверье об исполнении желаний. Эффектное фото.",
+   a:"Васильевский о. · адрес уточнить",p:"свободно (жилой двор — тихо)",g:["фото","прогулка"]},
+  {n:"Каменноостровский проспект · модерн",c:"districts",m:"mid",t:"любое",w:"открытое",u:"https://kudago.com/spb/list/progulka-po-kamennoostrovskomu/",
+   d:"Музей петербургского модерна под открытым небом: доходные дома и особняки начала XX в., лепнина, эркеры, мозаики.",
+   a:"от м. Горьковская до Петроградской",p:"свободно · ~40–60 мин",g:["район","прогулка","фото","культура"]},
+  {n:"Австрийская площадь",c:"districts",m:"mid",t:"любое",w:"открытое",u:"",
+   d:"Маленькая круглая площадь с симметричными домами венского модерна — «самый европейский» уголок города. Камерно, фотогенично.",
+   a:"Каменноостровский × Большой П.С. · м. Горьковская",p:"свободно",g:["фото","прогулка","романтика"]},
+  {n:"Особняк Кшесинской",c:"districts",m:"mid",t:"день",w:"частично",u:"https://polithistory.ru/",
+   d:"Манифест петербургского модерна: асимметрия, разные окна. Сейчас Музей политической истории. Снаружи — обязательный кадр.",
+   a:"Кронверкский пр. 1–3 · м. Горьковская",p:"музей ~10–18, ср вых. · уточнить",g:["культура","фото"]},
+  {n:"Соборная мечеть",c:"districts",m:"mid",t:"любое",w:"открытое",u:"",
+   d:"Одна из крупнейших мечетей Европы, бирюзовый купол и среднеазиатские изразцы с чертами северного модерна. Контрастная доминанта.",
+   a:"Кронверкский пр. 7 · м. Горьковская",p:"снаружи свободно; вход ограничен",g:["фото","культура"]},
+  {n:"Каменный остров · дачи и модерн",c:"districts",m:"hidden",t:"день",w:"открытое",u:"https://gorbilet.ru/blog/interesnie-mesta/marshrut-po-ostrovam-peterburga-petrogradskij-aptekarskij-kamennyj-i-elagin",
+   d:"Закрытый зелёный остров старых дачных особняков: дача Гаусвальд (шедевр деревянного модерна), тишина, загород в городе.",
+   a:"м. Чёрная речка / Крестовский остров",p:"прогулка свободно (особняки снаружи)",g:["район","прогулка","природа","фото"]},
+  {n:"Елагин остров · ЦПКиО",c:"districts",m:"mid",t:"день",w:"открытое",u:"https://www.elaginpark.org/",
+   d:"Весь остров — пейзажный парк с прудами, белками, Елагиным дворцом Росси и видом на залив. Стрелка — место заката.",
+   a:"м. Крестовский остров / Старая Деревня",p:"будни обычно бесплатно, выходные платно",g:["природа","прогулка","романтика","фото"]},
+  {n:"Арт-центр «Пушкинская-10»",c:"districts",m:"mid",t:"день",w:"частично",u:"https://www.p-10.ru/",
+   d:"Легендарный сквот художников с 1989 г.: галереи, мастерские, улица Джона Леннона, музей нонконформизма. Сердце андеграунда.",
+   a:"вход с Лиговского пр. 53 · м. Пл. Восстания",p:"ср–вс ~12–19 · билет ~400 ₽",g:["арт","культура","фото"]},
+  {n:"Мозаичный дворик",c:"districts",m:"mid",t:"день",w:"открытое",u:"https://kudago.com/spb/place/mozaichnyj-dvorik-spb/",
+   d:"Двор, целиком выложенный цветной мозаикой: скамейки, стены, скульптуры — мини-Гауди в центре. Очень фотогенично.",
+   a:"ул. Чайковского 2б · м. Чернышевская",p:"днём, свободно (жилой двор)",g:["арт","фото","прогулка"]},
+
+  // ===== ЗАГОРОД, КЛУБНИКА, ФЕРМЫ =====
+  {n:"Выборг · замок + парк Монрепо",c:"country",m:"turist",t:"день",w:"частично",u:"https://vyborgmuseum.org/",
+   d:"Единственный средневековый рыцарский замок в России, башня Олафа со смотровой + скальный парк Монрепо. Самая европейская атмосфера региона.",
+   a:"Ласточка с Финляндского · 1 ч 15 мин",p:"башня 500 ₽ · билеты на замок/парк уточнить",g:["загород","замок","природа","романтика"]},
+  {n:"Гатчина · дворец + парк + подземный ход",c:"country",m:"turist",t:"день",w:"частично",u:"https://gatchinapalace.ru/",
+   d:"Замок-дворец Павла I с настоящим подземным ходом (130 м) к гроту «Эхо» и огромным пейзажным парком. Не путать с Пушкином.",
+   a:"электричка с Балтийского · ~1 ч",p:"интерьеры + ход 700 ₽; экскурсия 850 ₽",g:["загород","замок","романтика"]},
+  {n:"Павловск · дворец + английский парк",c:"country",m:"turist",t:"день",w:"частично",u:"https://pavlovskmuseum.ru/",
+   d:"Дворец Павла I и крупнейший пейзажный парк Европы (600 га) — реки, павильоны, лес. Парк дикий и тихий. Рядом с Пушкином — берите ради парка.",
+   a:"электричка с Витебского · 33 мин",p:"парк 300 ₽ (7–23); дворец 800 ₽, пн вых.",g:["загород","усадьба","природа","романтика"]},
+  {n:"Рускеала · мраморный каньон (Карелия)",c:"country",m:"turist",t:"день",w:"частично",u:"https://experience.tripster.ru/experience/31374/",
+   d:"Затопленный мраморный каньон с бирюзовой водой, штольни, тропы над обрывами + ретропоезд. Топ-впечатление, но день длинный — только туром.",
+   a:"Ласточка → Сортавала ~4 ч + ретропоезд",p:"туры из СПб от 1890–2890 ₽",g:["загород","природа","романтика"]},
+  {n:"Приозерск · крепость Корела",c:"country",m:"mid",t:"день",w:"частично",u:"https://www.tourister.ru/world/europe/russia/city/priozersk1/museum/30056",
+   d:"Компактная средневековая крепость на острове Вуоксы (стены XVI в.), музей, северная вода вокруг. Камерно, без толп.",
+   a:"Ласточка с Финляндского · ~2–2,5 ч, далее 10 мин пешком",p:"единый билет 200 ₽",g:["загород","замок","природа"]},
+  {n:"Кузнечный рынок · клубника тепличная",c:"country",m:"mid",t:"день",w:"крытое",u:"https://yandex.ru/maps/org/kuznechny_rynok/1279147417/",
+   d:"Реальный способ дать ей клубники в середине июня — тепличная и первая грунтовая уже здесь. Плюс атмосферный рынок в красивом здании.",
+   a:"Кузнечный пер. 3 · м. Владимирская",p:"рыночные цены · ежедневно",g:["клубника","еда","рынок"]},
+  {n:"Сыроварня «Менестрель»",c:"country",m:"mid",t:"день",w:"крытое",u:"https://menestrel.bio/excursion/",
+   d:"Французская сыроварня под Гатчиной: экскурсия + мастер-класс от сыровара + дегустация 7 сортов. Гастро-свидание, крытое — замена «клубничному» выезду.",
+   a:"пос. Пудость · на машине",p:"по записи · цена уточнить",g:["ферма","романтика","загород","еда"]},
+  {n:"Ферма-сыроварня «Деревня»",c:"country",m:"mid",t:"день",w:"крытое",u:"https://ferma-derevnya.ru/",
    d:"Ближайшая к городу сыроварня: дегустация 8+ сортов, домашняя колбаса, хлеб; экскурсия + мастер-класс. Карельский перешеек.",
-   a:"дер. Матокса, ~35 км · авт. 619/К691 из Девяткино",p:"по записи · цена уточнить",g:["ферма","романтика","загород","еда"]},
-  {n:"ЧистоЯгода · экоферма + тур",c:"country",m:"mid",t:"день",w:"открытое",
-   d:"Клубника по евротехнологиям; есть готовый ТУР с трансфером из города (удобно для свидания). Самосбор — в июле, звонить.",
-   a:"пос. Петровское, Карельский перешеек",p:"тур ~2990 ₽; самосбор 500 ₽/кг · сезон июль",g:["клубника","ферма","романтика","загород"]},
-  {n:"Ягода Парк",c:"country",m:"mid",t:"день",w:"открытое",
-   d:"Ягодная ферма-парк: клубника навынос с ~20 июня; самосбор клубники закрыт, самосбор малины с 15 июля. ~40 мин от города.",
-   a:"дер. Каушта, Гатчинский р-н · на машине",p:"ферма 9–19 · клубника ~900 ₽/кг (мин. 5 кг)",g:["клубника","ферма","загород"]},
-  {n:"Клубника из Ольховки · самосбор",c:"country",m:"hidden",t:"день",w:"открытое",
-   d:"Профильное клубничное хозяйство, классический «собери сам» дешевле рынка. Старт сезона 2026 не объявлен — ждать июля, по записи.",
-   a:"граница Тосненского/Кировского р-нов · только машина",p:"сбор 10–16, строго по записи · цена уточнить",g:["клубника","ферма","загород"]},
-  {n:"Линдуловская роща",c:"country",m:"mid",t:"день",w:"открытое",
-   d:"Старейшая в России лиственничная роща (1738, при Петре I). Лес-эталон, эко-тропа — спокойная романтичная прогулка.",
-   a:"у пос. Рощино · электричка с Финляндского ~1 ч",p:"свободно, бесплатно",g:["природа","загород","романтика"]},
-  {n:"Радоновые озёра (Лопухинка)",c:"country",m:"hidden",t:"день",w:"открытое",
-   d:"Бирюзово-изумрудная вода в каньоне реки Лопухинки — редкость для ЛО. Купаться нельзя, но виды открыточные.",
-   a:"дер. Лопухинка, Ломоносовский р-н · ~1 ч на машине",p:"свободно, бесплатно",g:["природа","загород","романтика"]},
-  {n:"Саблинские пещеры + водопады",c:"country",m:"mid",t:"день",w:"частично",
-   d:"Искусственные пещеры-лабиринты, два водопада и каньоны рек Тосна и Саблинка. Приключение в часе от города. В пещере +8°C.",
-   a:"ст. Саблино, ~40 км",p:"пещера по записи 12–16, экскурсия ~2490 ₽; водопады бесплатно",g:["природа","загород"]},
-  {n:"Усадьба Рождествено (Набоков)",c:"country",m:"hidden",t:"день",w:"частично",
-   d:"Деревянный усадебный дом-классицизм на холме, имение, связанное с Набоковым; парк с гротами над рекой Оредеж.",
-   a:"Гатчинский р-н, ~60 км · электричка до Сиверской + авт.",p:"ср–вс 11–17 · цена уточнить",g:["загород","романтика"]},
-  {n:"Усадьба Марьино",c:"country",m:"mid",t:"день",w:"частично",
-   d:"Дворцово-парковый ансамбль XIX в.: английский парк 16 га, японский сад. Самое «дорогое» из усадеб, картиночная романтика.",
-   a:"дер. Андрианово, Тосненский р-н, ~60 км · машина",p:"усадьба-отель + экскурсии · цена уточнить",g:["загород","романтика","природа"]},
-  {n:"Токсово · зубропитомник + тропа",c:"country",m:"mid",t:"день",w:"открытое",
-   d:"Живые зубры в загоне (смотреть бесплатно) + лесная эко-тропа у озера Хепоярви. Ближайший настоящий лес, легко без машины.",
-   a:"ст. Токсово · электричка с Финляндского ~30 мин",p:"зубры бесплатно; беседки/прокат",g:["природа","загород","ферма"]},
-  {n:"Эко-ферма контактная (Рябизи)",c:"country",m:"hidden",t:"день",w:"открытое",
-   d:"Мини-зоо (козы, кролики, телята, пруд с черепахой) + дегустация фермерских продуктов. Тёплый лёгкий формат.",
-   a:"дер. Рябизи, Гатчинский р-н · машина",p:"экскурсия 1,5–2 ч · 500 ₽/чел (группа от 5)",g:["ферма","загород"]},
+   a:"дер. Матокса, ~35 км · авт. из Девяткино",p:"по записи · от 2000 ₽ (до 4 чел)",g:["ферма","романтика","загород","еда"]},
+  {n:"ЧистоЯгода · ферма + тур",c:"country",m:"mid",t:"день",w:"открытое",u:"https://chistoyagoda.ru/",
+   d:"Клубника по евротехнологиям; есть готовый тур с трансфером из города. Самосбор — в июле, звонить.",
+   a:"пос. Петровское, Карельский перешеек",p:"тур ~2990 ₽; самосбор 500 ₽/кг · июль",g:["клубника","ферма","романтика","загород"]},
+  {n:"Линдуловская роща (ЮНЕСКО)",c:"country",m:"hidden",t:"день",w:"открытое",u:"https://www.tourister.ru/world/europe/russia/city/saint_petersburg/reserves/28526",
+   d:"Старейший в Европе лиственничный заказник (1738), экотропа вдоль реки. Тихо, бесплатно. На одной ветке с Выборгом.",
+   a:"ст. Рощино · Ласточка 39 мин",p:"свободно, бесплатно",g:["природа","загород","романтика"]},
+  {n:"Радоновые озёра (Лопухинка)",c:"country",m:"hidden",t:"день",w:"открытое",u:"https://ooptlo.ru/ecoradonovyie-istochniki-i-ozera-u-derevni-lopuxinka.html",
+   d:"Бирюзово-изумрудная вода в каньоне реки — редкость для ЛО. Купаться нельзя, но виды открыточные.",
+   a:"дер. Лопухинка · ~1 ч на машине",p:"свободно, бесплатно",g:["природа","загород","романтика"]},
+  {n:"Саблинские пещеры + водопады",c:"country",m:"mid",t:"день",w:"частично",u:"https://sablino.net/",
+   d:"Пещеры-лабиринты, два водопада и каньоны рек. Приключение в часе от города. В пещере +8°C — взять куртку.",
+   a:"ст. Саблино, ~40 км",p:"пещера по записи · ~1200 ₽; водопады бесплатно",g:["природа","загород"]},
+  {n:"Усадьба Марьино",c:"country",m:"hidden",t:"день",w:"частично",u:"https://usadbamaryino.ru/",
+   d:"Пышный усадебный ансамбль XIX в. Строгановых-Голицыных: английский парк, ферма, галерея. Экскурсии «любовные истории» — под романтику.",
+   a:"дер. Андрианово, ~60 км · машина",p:"парк 250–500 ₽; дворец-экскурсия 500 ₽",g:["загород","усадьба","романтика","природа"]},
+  {n:"Усадьба Рождествено (музей Набокова)",c:"country",m:"hidden",t:"день",w:"частично",u:"https://www.lenoblmus.ru/museums/muzey-usadba-rozhdestveno",
+   d:"Деревянный дом-«дворец» на холме над Оредежем, родовое гнездо Набокова; красные обрывы и пещеры рядом. Совместить с Гатчиной.",
+   a:"ст. Сиверская + авт. · с Балтийского ~1 ч",p:"~11–17, пн-вт вых. · открытие 2026 уточнить",g:["загород","усадьба","природа","романтика"]},
+  {n:"Токсово · зубропитомник + тропа",c:"country",m:"mid",t:"день",w:"открытое",u:"https://www.tourister.ru/world/europe/russia/city/toksovo/zoo/35197",
+   d:"Живые зубры в загоне (смотреть бесплатно) + лесная эко-тропа у озера. Ближайший настоящий лес, легко без машины.",
+   a:"ст. Токсово · электричка ~30 мин",p:"зубры бесплатно",g:["природа","загород","ферма"]},
+  {n:"Эко-ферма контактная (Рябизи)",c:"country",m:"hidden",t:"день",w:"открытое",u:"https://ecoferma.spb.ru/o_kompanii/ekskursiya/",
+   d:"Мини-зоо (козы, кролики, телята) + дегустация фермерских продуктов. Тёплый лёгкий формат.",
+   a:"дер. Рябизи, Гатчинский р-н · машина",p:"экскурсия 1,5–2 ч · 500 ₽/чел",g:["ферма","загород"]},
 
-  // ---------- КАЛЬЯН ----------
-  {n:"Sky Bar (Azimut, 18 этаж)",c:"hookah",m:"turist",t:"вечер",w:"крытое",
-   d:"Панорамный лаунж на 18 этаже, столы у окон в пол, вид на весь центр + кальян. Самый «открыточный» вечер.",
-   a:"Лермонтовский пр. 43/1 · м. Балтийская",p:"17–02 · чт–сб депозит 4000 ₽/стол",g:["кальян","вид","лаунж","романтика","коктейли"]},
-  {n:"Крыша 18 (Roof 18)",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"Панорамный ресто-лофт, окна в пол, вид на Неву и «Аврору», стейки в хоспере. Есть летняя площадка. Гибче Sky Bar по бюджету.",
-   a:"Петроградская наб. 18",p:"до 01:00 · кальян от 1500 ₽",g:["кальян","вид","лаунж","романтика"]},
-  {n:"Я люблю… La Panorama",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"Ресторан на 15 этаже БЦ «Биржа», отдельный кальянный зал, панорама на Васильевский. Камернее и уютнее, чем Sky Bar.",
-   a:"26-я линия В.О. 15к2 · м. Василеостровская",p:"пн–чт 10–24, пт–сб до 01 · чек уточнить",g:["кальян","вид","лаунж","романтика"]},
-  {n:"INSIDE Lounge Bar",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"«Кабинет коллекционера»: ретро-велосипеды под потолком, паровые коктейли на фруктах. Камерно, под долгий вечер вдвоём.",
-   a:"ул. Правды 1/11 · м. Звенигородская",p:"до 01:30, пт–сб до 06 · средний чек ~1500 ₽",g:["кальян","лаунж","романтика","коктейли"]},
-  {n:"Sanctum",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"Мистический art-deco + стимпанк: золотые крылатые статуи, свечи со змеями, азиатская кухня. Сильный визуал для эффектного вечера.",
-   a:"ул. Некрасова 3-5В · Центральный р-н",p:"чек уточнить · кальян адекватный для центра",g:["кальян","лаунж","романтика"]},
-  {n:"Garden Lounge",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"«Джунгли Азии»: люстры в живой зелени, фонтан, кальяны в настоящих фруктах (ананас, грейпфрут). Очень инстаграмно, в центре.",
-   a:"наб. реки Мойки 67-69 · м. Адмиралтейская",p:"уточнить",g:["кальян","лаунж","романтика"]},
-  {n:"Asia Lounge",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"Индустриальный Петербург + азиатский неон, двухэтажный, панорамный вид на 1 этаже. Кальяны в чашах из питахайи.",
-   a:"8-я Советская 9-13 · у пл. Восстания",p:"уточнить",g:["кальян","вид","лаунж","коктейли"]},
-  {n:"Мята Lounge (Рубинштейна)",c:"hookah",m:"turist",t:"вечер",w:"крытое",
-   d:"Известный бренд, «лучшие кальянщики», элитный чай, кальян на фруктах. Самый предсказуемо-хороший кальян + барная улица под боком.",
-   a:"Рубинштейна 26 · м. Достоевская",p:"средний чек ~1300 ₽",g:["кальян","лаунж","коктейли"]},
-  {n:"Lounge Room",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"Сетевой ресто-лаунж: панорамные окна на центр, кирпич + неон, индивидуальный подбор кальяна. Вид без депозитного порога руфтопов.",
-   a:"у м. Гостиный двор (центровая точка)",p:"поздневечерний график · уточнить",g:["кальян","вид","лаунж","коктейли"]},
-  {n:"Перестройка",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"Интерьер с предметами эпохи: печатные машинки, старинное пианино. До полуночи релакс-лаунж, позже — вечеринка. У Рубинштейна.",
-   a:"район ул. Рубинштейна · Центральный р-н",p:"поздневечерний · уточнить",g:["кальян","лаунж","коктейли"]},
-  {n:"Endorphin",c:"hookah",m:"mid",t:"вечер",w:"крытое",
-   d:"Уютный бежевый интерьер, настолки, PlayStation, призы. Менее романтично — вариант если вечер хочется провести играя.",
-   a:"Фрунзенская (ближе к центру) и др. точки",p:"уточнить",g:["кальян","лаунж"]},
+  // ===== ЗАВТРАКИ И КОФЕ =====
+  {n:"Aster",c:"breakfast",m:"mid",t:"день",w:"крытое",u:"https://astercafe.ru/",
+   d:"Один из главных завтрачных адресов: за сырниками с кокосовым кремом стоят очереди. Менемен, скандинавский завтрак с форелью.",
+   a:"ул. Маяковского 23/6 · м. Чернышевская",p:"9–23 · брони на двоих нет, в выходные очередь",g:["завтрак","еда","кофе","романтика"]},
+  {n:"Joli Grand Bistrot",c:"breakfast",m:"turist",t:"день",w:"крытое",u:"https://www.restoclub.ru/spb/place/joli",
+   d:"Самый фотогеничный завтрак — застеклённый атриум особняка Мясникова, залитый светом купол, своя пекарня и цветочная лавка.",
+   a:"ул. Восстания 45Б · м. Чернышевская",p:"9–00, есть завтраки · чек уточнить",g:["завтрак","романтика","еда","кофе"]},
+  {n:"Смена",c:"breakfast",m:"hidden",t:"день",w:"крытое",u:"https://www.restoclub.ru/spb/place/smena-1",
+   d:"От людей из Double B: отличный кофе, творожники (16 шт в порции). Принципиально без Wi-Fi — ставка на разговор за столом.",
+   a:"Басков пер. 20 · м. Чернышевская",p:"8–20, завтраки до 15 · уточнить",g:["кофе","завтрак","еда","работа"]},
+  {n:"Zoe",c:"breakfast",m:"mid",t:"день",w:"крытое",u:"https://www.restoclub.ru/spb/place/zoe",
+   d:"Пекарня со спешелти от владельцев Civil: круассаны без дрожжей, ферментация 20 часов. Дог-френдли, уютно.",
+   a:"Басков пер. 41/29 · м. Чернышевская",p:"8–20 · уточнить",g:["кофе","еда","завтрак"]},
+  {n:"Мечтатели",c:"breakfast",m:"mid",t:"день",w:"крытое",u:"https://2gis.ru/spb/firm/70000001019632134",
+   d:"Атмосферное кафе на Фонтанке с мощной кофейной картой (хario, кемекс), к завтраку игристое. Проверенные круассаны и сырники.",
+   a:"наб. Фонтанки 11 · м. Гостиный двор",p:"завтраки от 350 ₽ (с напитком)",g:["завтрак","кофе","романтика","еда"]},
+  {n:"Civil",c:"breakfast",m:"mid",t:"день",w:"крытое",u:"https://cvlcoffee.ru/",
+   d:"Один из эталонов спешелти-сцены: сырники с вишней и взбитой сметаной со сгущёнкой. Несколько точек (центр, Петроградка, В.О.).",
+   a:"Б. Конюшенная 19 + точки · м. Невский проспект",p:"~8–22 · уточнить",g:["кофе","завтрак","еда"]},
+  {n:"Bolshe Coffee Roasters",c:"breakfast",m:"hidden",t:"день",w:"крытое",u:"https://bolshecoffee.ru/",
+   d:"Спешелти-обжарщики; их точка в гроте Александровского парка у пруда — атмосферное необычное утро на Петроградке.",
+   a:"Александровский парк 3Г + Марата 22 · м. Горьковская",p:"уточнить",g:["кофе","еда"]},
+  {n:"Surf Coffee × G34",c:"breakfast",m:"mid",t:"день",w:"крытое",u:"https://www.surfcoffee.ru/",
+   d:"Серф-интерьер (кирпич, доски, растения), завтраки и свежая выпечка, расслабленная атмосфера. Лёгкое неспешное утро в центре.",
+   a:"район Сенной / М. Конюшенная · м. Невский проспект",p:"уточнить",g:["кофе","завтрак","еда"]},
+  {n:"Буше",c:"breakfast",m:"turist",t:"день",w:"крытое",u:"https://bushe.ru/",
+   d:"Культовая пекарня-кондитерская с 1999: круассаны на сливочном масле, модный флэт-круассан, надёжные завтраки. Много точек.",
+   a:"Малая Морская 7 (флагман) · м. Адмиралтейская",p:"до 22, завтраки 8–19:30 · чек ~700 ₽",g:["еда","кофе","завтрак"]},
+  {n:"Кофе и Вафли",c:"breakfast",m:"mid",t:"день",w:"крытое",u:"https://2gis.ru/spb/search/Кофе и Вафли Васильевский",
+   d:"На углу 1-й линии и Среднего проспекта — известен завтраками и атмосферой. Удобная точка старта прогулки по Ваське.",
+   a:"1-я линия В.О. · м. Василеостровская",p:"уточнить",g:["кофе","завтрак","еда"]},
 
-  // ---------- ЕДА С ВИДОМ / РУФТОПЫ / КАФЕ ----------
-  {n:"Мансарда",c:"rooftop",m:"turist",t:"любое",w:"крытое",
-   d:"Светский ресторан Ginza на верхнем этаже Quattro Corti: Исаакий прямо в стеклянных витражах. Raw-бар, блюда на огне. Крытый вид.",
-   a:"Почтамтская 3-5 · м. Адмиралтейская",p:"12–01 · средний чек 6000+ ₽",g:["вид","еда","романтика"]},
-  {n:"La Vue",c:"rooftop",m:"mid",t:"вечер",w:"крытое",
-   d:"Руфтоп на крыше отеля «Санкт-Петербург», панорама 260° на Неву и Троицкий мост. Всесезонный стеклянный зал + летняя крыша на 60 м.",
-   a:"Пироговская наб. 5/2 · м. Площадь Ленина",p:"высокий сегмент · уточнить (la-vue.ru)",g:["вид","руфтоп","еда","романтика","коктейли"]},
-  {n:"Горизонты",c:"rooftop",m:"mid",t:"вечер",w:"частично",
-   d:"Панорамная крыша в центре: вид на Исаакий, Казанский, Петропавловку и Лахту. В непогоду — остеклённая веранда. Бюджетнее руфтопов.",
-   a:"наб. реки Фонтанки 59 · м. Сенная",p:"средний чек ~1700 ₽",g:["вид","руфтоп","еда","романтика"]},
-  {n:"Этаж 41",c:"rooftop",m:"turist",t:"вечер",w:"крытое",
-   d:"Самая высокая панорамная площадка города — 41 этаж Leader Tower, обзор 360° с ~150 м. Вид городской, не открыточный центр.",
-   a:"пл. Конституции 3к2 · м. Московская",p:"до 23:30, пт–сб до 03 · чек 2300–6000 ₽ (уточнить)",g:["вид","еда","коктейли","романтика"]},
-  {n:"Cristal",c:"rooftop",m:"mid",t:"вечер",w:"крытое",
-   d:"Отдельное здание с панорамными окнами на Неву и Лавру. Аква-система с устрицами и крабами, паназия + средиземноморье. Крытый вид у воды.",
-   a:"Синопская наб. 10 · м. Пл. Александра Невского",p:"уточнить",g:["вид","еда","романтика","коктейли"]},
-  {n:"Antonio Bistro (Севкабель)",c:"rooftop",m:"hidden",t:"любое",w:"частично",
-   d:"Средиземноморское бистро Пинского на набережной Севкабеля с видом на Финский залив. Можно совместить с прогулкой по порту и закатом.",
-   a:"Кожевенная линия 40, Севкабель Порт",p:"пн–чт 12–23 · ланч от 550 ₽, чек от ~2600 ₽",g:["вид","еда","романтика"]},
-  {n:"Volga-Volga · ресторан-теплоход",c:"rooftop",m:"turist",t:"любое",w:"частично",
-   d:"Ресторан-теплоход с круизами по Неве: вся центральная панорама с воды. Скорее событие, чем просто посидеть. Есть крытый салон.",
-   a:"причал в центре · по расписанию круизов",p:"по расписанию · уточнить",g:["вид","романтика","еда"]},
-  {n:"Кофе на кухне",c:"rooftop",m:"hidden",t:"день",w:"крытое",
-   d:"Крошечная уютная кофейня с домашней атмосферой, старинным пианино и видом на Фонтанку из окон. Крытый вид на воду — идеально в пасмурь.",
-   a:"наб. реки Фонтанки 17",p:"уточнить",g:["вид","еда","романтика"]},
-
-  // ---------- ПОРАБОТАТЬ ----------
-  {n:"Coffee 3",c:"work",m:"hidden",t:"день",w:"крытое",
-   d:"Лучший матч «поработать в красоте»: 5 этаж бывшей фабрики, панорамные окна на петербургские крыши, коворкинг-зона + розетки + чилл с подушками.",
+  // ===== ПОРАБОТАТЬ =====
+  {n:"Coffee 3",c:"work",m:"hidden",t:"день",w:"крытое",u:"https://cafecoffee3.ru/",
+   d:"Лучший матч «поработать в красоте»: 5 этаж фабрики, панорамные окна на крыши, коворкинг-зона + розетки + чилл с подушками.",
    a:"пр. Медиков 5С, Петроградка · вход через арку у А2",p:"безлимитный wifi · уточнить часы",g:["работа","вид","руфтоп","еда"]},
-  {n:"Подписные издания",c:"work",m:"turist",t:"день",w:"крытое",
-   d:"Культовый книжный 1926 г., кафе на 2 этаже с балконом-антресолью, лампы как в библиотеке. Книга + кофе + ноут. Очень петербургская эстетика.",
-   a:"Литейный пр. 57 · м. Маяковская",p:"10–22 · бесплатный wifi",g:["работа","романтика","еда"]},
-  {n:"Bonch",c:"work",m:"mid",t:"день",w:"крытое",
+  {n:"Подписные издания",c:"work",m:"turist",t:"любое",w:"крытое",u:"https://www.podpisnie.ru/",
+   d:"Один из красивейших книжных России (с 1926): кафе на 2 этаже с балконом, лампы как в библиотеке. Книга + кофе + ноут.",
+   a:"Литейный пр. 57 · м. Маяковская",p:"до 22, wifi · ноутбук-френдли",g:["работа","книги","романтика","еда"]},
+  {n:"Bonch",c:"work",m:"mid",t:"день",w:"крытое",u:"http://bonchcoffee.ru/",
    d:"Индустриальный стиль, лампы-НЛО, просторно, много розеток, качественный кофе. Заточено под долгую посадку с ноутбуком.",
    a:"Б. Морская 16 · у Дворцовой",p:"уточнить",g:["работа","еда"]},
-  {n:"WöD",c:"work",m:"hidden",t:"день",w:"крытое",
+  {n:"WöD",c:"work",m:"hidden",t:"день",w:"крытое",u:"https://www.restoclub.ru/spb/place/wod",
    d:"Гибрид арт-галереи, бара и воркспейса с винной картой, тихий двор у музея Набокова. Днём работа, вечером бар.",
    a:"Б. Морская 45 · Адмиралтейский",p:"уточнить",g:["работа","коктейли"]},
-  {n:"Смена",c:"work",m:"hidden",t:"день",w:"крытое",
-   d:"Минимализм, винтаж, мягкая музыка, светло. ВАЖНО: специально нет wifi — для глубокой работы (мобильный интернет выручит).",
-   a:"Басков пер. 20 · м. Чернышевская",p:"уточнить",g:["работа"]},
-  {n:"Сообщество",c:"work",m:"hidden",t:"день",w:"крытое",
-   d:"Рабочие места с wifi и розетками, большой общий стол или кресла с ноутбуком. Просторно и тихо — под тех, кто любит тишину.",
+  {n:"Сообщество",c:"work",m:"hidden",t:"день",w:"крытое",u:"",
+   d:"Рабочие места с wifi и розетками, большой общий стол или кресла с ноутбуком. Просторно и тихо — для тех, кто любит тишину.",
    a:"центр · адрес уточнить",p:"уточнить",g:["работа"]},
 
-  // ---------- КУЛЬТУРА ----------
-  {n:"«Русский Императив» · Манеж",c:"culture",m:"turist",t:"любое",w:"крытое",
-   d:"Выставка-блокбастер: Верещагин, Репин, Петров-Водкин, Кандинский. Манеж умеет «дорогую» сценографию. Проверить афишу.",
-   a:"ЦВЗ Манеж, Исаакиевская пл. 1",p:"до 12 июля · 100–800 ₽",g:["культура","выставка","фото"]},
-  {n:"Музей Фаберже (Шуваловский дворец)",c:"culture",m:"turist",t:"любое",w:"крытое",
+  // ===== РЕСТОРАНЫ (УЖИНЫ) =====
+  {n:"Birch",c:"food",m:"turist",t:"вечер",w:"крытое",u:"https://birchrestaurants.com/saintpetersburg",
+   d:"№1 в России (WHERETOEAT 2026): авторские сезонные сеты, шеф Бердиев. Столы разбирают за недели — бронь открывается в 14:00 на +30 дней.",
+   a:"Кирочная 3 · м. Чернышевская",p:"сеты 9 500–12 500 ₽ (+вино)",g:["еда","романтика"]},
+  {n:"EM Restaurant",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/em",
+   d:"Камерные дегустационные сеты в старой петербургской квартире, готовят вокруг чугунной печи AGA. Максимально интимный формат.",
+   a:"наб. Мойки 84 · м. Адмиралтейская",p:"сеты 2 500 / 4 500 ₽",g:["еда","романтика"]},
+  {n:"Lodka Seafood & Oyster Bar",c:"food",m:"hidden",t:"вечер",w:"крытое",u:"https://lodkabar.ru/",
+   d:"Главный устричный бар города: аквариум ~4000 моллюсков, до 30 сортов живых устриц, устричный сомелье. Вау-вечер для гостьи.",
+   a:"Жуковского 41 · м. Маяковская",p:"3 000–6 000 ₽ · устрицы от 120 ₽/шт",g:["еда","романтика","коктейли"]},
+  {n:"Sea, Signora",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://seasignora.ru/",
+   d:"Флагман Антонио Фрезы: «улов дня» из Средиземки, тосканский гриль, raw-бар, аквариум в центре зала.",
+   a:"Большая Морская 30 · м. Адмиралтейская",p:"1 700–3 000 ₽",g:["еда","романтика","коктейли"]},
+  {n:"True Crab",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://truecrab.ru/",
+   d:"Камчатский краб как флагман: фаланги с манго/кимчи, крабовые тако, морское плато. Есть романтические сеты.",
+   a:"Ропшинская 30, Петроградка · м. Чкаловская",p:"3 000–6 000 ₽",g:["еда","романтика"]},
+  {n:"Self Edge Japanese",c:"food",m:"turist",t:"вечер",w:"крытое",u:"https://selfedge.ru/japanese-saintpetersburg",
+   d:"«Ресторан года 2026» (Яндекс Еда): дикая рыба Японского моря, вагю, коллекция саке. Место, о котором все говорят.",
+   a:"Радищева 34 · м. Чернышевская",p:"3 000–6 000 ₽",g:["еда","романтика","коктейли"]},
+  {n:"Duo Asia",c:"food",m:"turist",t:"вечер",w:"крытое",u:"https://duoasia.ru/",
+   d:"Флагман Duoband на Рубинштейна: паназия + десерты от «Кондитера года» Стаса Пауля. Бронь обязательна.",
+   a:"Рубинштейна 20 · м. Достоевская",p:"3 000–4 500 ₽",g:["еда","романтика","коктейли"]},
+  {n:"Nama",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://www.novikovgroup.ru/restaurants/nama-sankt-peterburg/",
+   d:"Первый проект Новикова + Пинского в СПб, шеф Глен Баллис: суши/сашими/тартары, сильная подача. Трендовое «показать гостье».",
+   a:"Ковенский пер. 5 · м. Маяковская",p:"2 000–2 300 ₽ (с напитками выше)",g:["еда","романтика","коктейли"]},
+  {n:"Made in China",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://madeinchina-spb.ru/",
+   d:"Нео-китайская кухня + первый азиатский бар СПб у Исаакия: 40-метровый дракон под потолком, хрустящая утка, коктейли.",
+   a:"Большая Морская 35 · м. Адмиралтейская",p:"~2 000 ₽ без напитков",g:["еда","романтика","коктейли"]},
+  {n:"Probka (Пробка)",c:"food",m:"turist",t:"вечер",w:"крытое",u:"https://probka.org/restaurants/probka-spb/",
+   d:"Флагман Арама Мнацаканова: паста ручной работы, открытая кухня, винная карта 300+. Главный «винный ужин».",
+   a:"Зоологический пер. 2-4 · м. Спортивная",p:"~3 500 ₽ (с вином выше)",g:["еда","романтика","вино"]},
+  {n:"Jerome (Жером)",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/jerome",
+   d:"Итальянский проект сомелье с шефом-итальянцем: пицца/паста ручной работы + сильное вино, атмосфернее сетевой классики.",
+   a:"Большая Морская 25 · м. Адмиралтейская",p:"~3 000–3 500 ₽",g:["еда","романтика","вино"]},
+  {n:"Усахело (ex-Kazbegi)",c:"food",m:"mid",t:"вечер",w:"крытое",u:"http://kazbegi.spb.ru/",
+   d:"Грузинская (мегрельская) в особняке князя Кочубея: гобелены, ужин при свечах, одни из лучших хинкали в городе.",
+   a:"Фурштатская 24 · м. Чернышевская",p:"~1 500 ₽+ (вечером выше)",g:["еда","романтика"]},
+  {n:"VAKH (Вах)",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://vakh-rest.ru/",
+   d:"Модная современная грузинская, бренд-шеф Элисо Гочава, винная карта 100+ (Вакх = бог виноделия).",
+   a:"Большая Зеленина 34, Петроградка · м. Чкаловская",p:"~2 500 ₽",g:["еда","романтика","коктейли"]},
+  {n:"Тбилисо",c:"food",m:"turist",t:"вечер",w:"крытое",u:"https://tbiliso.eatout.ru/",
+   d:"Старейшая грузинская классика: своя пекарня и сыроварня, «старый тбилисский дворик», Пиросмани. Живая музыка чт-сб.",
+   a:"Сытнинская 10, Петроградка · м. Горьковская",p:"~2 500 ₽",g:["еда","романтика"]},
+  {n:"Harvest",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://harvestduo.ru/",
+   d:"Гастрономическая кухня с акцентом на овощи (не строго вег — есть рыба/мясо). Проект Duoband, Gault&Millau + Bib Gourmand.",
+   a:"пр. Добролюбова 11Е · м. Спортивная",p:"3 000–6 000 ₽",g:["еда","романтика"]},
+  {n:"Tartarbar",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://tartarbar.ru/",
+   d:"Брутальная raw-гастрономия вокруг тартаров/севиче/костного мозга + винотека (команда Duoband). Редкий камерный формат.",
+   a:"Виленский пер. 15 · м. Чернышевская",p:"~2 500–3 000 ₽",g:["еда","романтика","коктейли"]},
+  {n:"Bourgeois Bohemians (BOBO)",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://bobospb.ru/",
+   d:"Авторские сезонные сеты от братьев Гребенщиковых, «секретный адрес» во дворе, прогрессивное вино. (Тот же двор, что Tartarbar.)",
+   a:"Виленский пер. 15 · м. Чернышевская",p:"сеты 5 000–7 000 ₽",g:["еда","романтика"]},
+  {n:"Inner",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://inner.rest/",
+   d:"Авторская европейская с локальными акцентами, «Шеф года 2025». Фотогеничный интерьер, оленина в брусничном, томатное севиче.",
+   a:"Пионерская 31, Петроградка · м. Чкаловская",p:"~3 500 ₽",g:["еда","романтика"]},
+  {n:"Duo Gastrobar",c:"food",m:"mid",t:"вечер",w:"крытое",u:"https://duobar.ru/",
+   d:"С него началась группа Duo Band: европейская авторская в формате гастробара, демократичнее флагманов — «лёгкий» вечер.",
+   a:"Кирочная 8Б · м. Чернышевская",p:"~2 000 ₽",g:["еда","романтика","коктейли"]},
+
+  // ===== ЕДА С ВИДОМ / РУФТОПЫ =====
+  {n:"Мансарда",c:"rooftop",m:"turist",t:"любое",w:"крытое",u:"https://spb.restoran.ru/spb/detailed/restaurants/mansarda/",
+   d:"Светский ресторан Ginza на верхнем этаже Quattro Corti: Исаакий прямо в стеклянных витражах. Raw-бар, блюда на огне. Крытый вид.",
+   a:"Почтамтская 3-5 · м. Адмиралтейская",p:"12–01 · средний чек 6000+ ₽",g:["вид","еда","романтика"]},
+  {n:"La Vue",c:"rooftop",m:"mid",t:"вечер",w:"крытое",u:"https://la-vue.ru/",
+   d:"Руфтоп на крыше отеля «Санкт-Петербург», панорама 260° на Неву и Троицкий мост. Всесезонный стеклянный зал + летняя крыша на 60 м.",
+   a:"Пироговская наб. 5/2 · м. Площадь Ленина",p:"высокий сегмент · уточнить",g:["вид","руфтоп","еда","романтика","коктейли"]},
+  {n:"Горизонты",c:"rooftop",m:"mid",t:"вечер",w:"частично",u:"https://gorizontyrest.ru/",
+   d:"Панорамная крыша в центре: вид на Исаакий, Казанский, Петропавловку и Лахту. В непогоду — остеклённая веранда. Бюджетнее руфтопов.",
+   a:"наб. реки Фонтанки 59 · м. Сенная",p:"средний чек ~1700 ₽",g:["вид","руфтоп","еда","романтика"]},
+  {n:"Этаж 41",c:"rooftop",m:"turist",t:"вечер",w:"крытое",u:"https://41floor.ru/",
+   d:"Самая высокая панорамная площадка города — 41 этаж Leader Tower, обзор 360° с ~150 м. Вид городской, не открыточный центр.",
+   a:"пл. Конституции 3к2 · м. Московская",p:"до 23:30, пт–сб до 03 · 2300–6000 ₽",g:["вид","еда","коктейли","романтика"]},
+  {n:"Cristal",c:"rooftop",m:"mid",t:"вечер",w:"крытое",u:"https://cristal-resort.ru/",
+   d:"Отдельное здание с панорамными окнами на Неву и Лавру. Аква-система с устрицами и крабами, паназия + средиземноморье.",
+   a:"Синопская наб. 10 · м. Пл. Александра Невского",p:"уточнить",g:["вид","еда","романтика","коктейли"]},
+  {n:"Antonio Bistro (Севкабель)",c:"rooftop",m:"mid",t:"любое",w:"частично",u:"https://antonio.rest/",
+   d:"Средиземноморское бистро Пинского на набережной Севкабеля с видом на Финский залив. Совместить с прогулкой по порту и закатом.",
+   a:"Кожевенная линия 40, Севкабель Порт · м. Приморская",p:"ланч от 550 ₽, чек от ~2600 ₽",g:["вид","еда","романтика","новое"]},
+  {n:"Xander Bar (Four Seasons)",c:"rooftop",m:"mid",t:"вечер",w:"крытое",u:"https://lionpalacehotel.com/restaurants/xander/",
+   d:"Элегантный зал с библиотекой и камином, вид на Исаакиевский собор. Сезонные коктейли по городским легендам. Дорого, статусно.",
+   a:"Вознесенский пр. 1 (Four Seasons) · м. Адмиралтейская",p:"17:30–02 · чек ~2500+ ₽",g:["вид","коктейли","романтика","лаунж"]},
+  {n:"Nevesomost (крыша)",c:"rooftop",m:"mid",t:"вечер",w:"частично",u:"https://vedenskyhotel.ru/restaurants-and-bars/roof/",
+   d:"Крыша отеля «Введенский» (10 этаж), панорама крыш Петроградки. Сотни лампочек вечером, пт-сб живая музыка. Закрывается в 23:00 — для заката.",
+   a:"Большой пр. П.С. 37 · м. Чкаловская",p:"12–23, терраса · ~1700–3000 ₽",g:["вид","романтика","лаунж"]},
+  {n:"Кофе на кухне",c:"rooftop",m:"hidden",t:"день",w:"крытое",u:"https://www.restoclub.ru/spb/place/kofe-na-kuhne",
+   d:"Крошечная уютная кофейня с домашней атмосферой, старинным пианино и видом на Фонтанку из окон. Крытый вид на воду — идеально в пасмурь.",
+   a:"наб. реки Фонтанки 17 · м. Гостиный двор",p:"уточнить",g:["вид","еда","романтика"]},
+  {n:"Volga-Volga · ресторан-теплоход",c:"rooftop",m:"turist",t:"любое",w:"частично",u:"https://ginza.ru/spb/restaurant/volga-Volga",
+   d:"Ресторан-теплоход с круизами по Неве: вся центральная панорама с воды. Есть крытый салон. ⚠️ Проверить, что работает — мог быть закрыт.",
+   a:"причал в центре · по расписанию круизов",p:"по расписанию · уточнить",g:["вид","романтика","еда"]},
+
+  // ===== КАЛЬЯН =====
+  {n:"Sky Bar (Azimut, 18 этаж)",c:"hookah",m:"turist",t:"вечер",w:"крытое",u:"https://azimuthotels.com/ru/facilities/f-11-sky-bar",
+   d:"Панорамный лаунж на 18 этаже, столы у окон в пол, вид на весь центр + кальян. Самый «открыточный» вечер.",
+   a:"Лермонтовский пр. 43/1 · м. Балтийская",p:"17–02 · чт–сб депозит 4000 ₽/стол",g:["кальян","вид","лаунж","романтика","коктейли"]},
+  {n:"Крыша 18 (Roof 18)",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/krysha-18",
+   d:"Панорамный ресто-лофт, окна в пол, вид на Неву и «Аврору», стейки в хоспере. Есть летняя площадка. Гибче Sky Bar по бюджету.",
+   a:"Петроградская наб. 18",p:"до 01:00 · кальян от 1500 ₽",g:["кальян","вид","лаунж","романтика"]},
+  {n:"Я люблю… La Panorama",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://ilovelapanorama.ru/",
+   d:"Ресторан на 15 этаже БЦ «Биржа», отдельный кальянный зал, панорама на Васильевский. Камернее и уютнее, чем Sky Bar.",
+   a:"26-я линия В.О. 15к2 · м. Василеостровская",p:"пн–чт 10–24, пт–сб до 01 · чек уточнить",g:["кальян","вид","лаунж","романтика"]},
+  {n:"INSIDE Lounge Bar",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/inside",
+   d:"«Кабинет коллекционера»: ретро-велосипеды под потолком, паровые коктейли на фруктах. Камерно, под долгий вечер вдвоём.",
+   a:"ул. Правды 1/11 · м. Звенигородская",p:"до 01:30, пт–сб до 06 · ~1500 ₽",g:["кальян","лаунж","романтика","коктейли"]},
+  {n:"Sanctum",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/sanctum",
+   d:"Мистический art-deco + стимпанк: золотые крылатые статуи, свечи со змеями, азиатская кухня. Сильный визуал для эффектного вечера.",
+   a:"ул. Некрасова 3-5В · Центральный р-н",p:"чек уточнить",g:["кальян","лаунж","романтика"]},
+  {n:"Garden Lounge",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/garden-lounge-2",
+   d:"«Джунгли Азии»: люстры в живой зелени, фонтан, кальяны в настоящих фруктах (ананас, грейпфрут). Очень инстаграмно, в центре.",
+   a:"наб. реки Мойки 67-69 · м. Адмиралтейская",p:"уточнить",g:["кальян","лаунж","романтика"]},
+  {n:"Asia Lounge",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://asia-lapsha.ru/soviet",
+   d:"Индустриальный Петербург + азиатский неон, двухэтажный, панорамный вид на 1 этаже. Кальяны в чашах из питахайи.",
+   a:"8-я Советская 9-13 · у пл. Восстания",p:"уточнить",g:["кальян","вид","лаунж","коктейли"]},
+  {n:"Мята Lounge (Рубинштейна)",c:"hookah",m:"turist",t:"вечер",w:"крытое",u:"https://myataloungespb.ru/",
+   d:"Известный бренд, «лучшие кальянщики», элитный чай, кальян на фруктах. Предсказуемо-хороший кальян + барная улица под боком.",
+   a:"Рубинштейна 26 · м. Достоевская",p:"средний чек ~1300 ₽",g:["кальян","лаунж","коктейли"]},
+  {n:"Lounge Room",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://lounge-room.ru/",
+   d:"Сетевой ресто-лаунж: панорамные окна на центр, кирпич + неон, индивидуальный подбор кальяна. Вид без депозитного порога руфтопов.",
+   a:"у м. Гостиный двор (центровая точка)",p:"поздневечерний график · уточнить",g:["кальян","вид","лаунж","коктейли"]},
+  {n:"Перестройка",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/perestrojka-1",
+   d:"Интерьер с предметами эпохи: печатные машинки, старинное пианино. До полуночи релакс-лаунж, позже — вечеринка. У Рубинштейна.",
+   a:"пер. Щербакова 17 · Центральный р-н",p:"поздневечерний · уточнить",g:["кальян","лаунж","коктейли"]},
+  {n:"Endorphin",c:"hookah",m:"mid",t:"вечер",w:"крытое",u:"https://endorphinlounge.ru/",
+   d:"Уютный бежевый интерьер, настолки, PlayStation, призы. Менее романтично — вариант если вечер хочется провести играя.",
+   a:"М. Митрофаньевская 5/1 · у Фрунзенской",p:"уточнить",g:["кальян","лаунж"]},
+
+  // ===== БАРЫ И ВИНО =====
+  {n:"El Copitas",c:"bars",m:"hidden",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/el-copitas",
+   d:"Легенда — единственный питерский бар в World's 50 Best. Мескаль/текила/тако, без вывески, во дворе. Бронь обязательна за дни.",
+   a:"Колокольная ул. 2 · м. Маяковская",p:"19–02, пт-сб до 03 · ~3000–5000 ₽ · по записи",g:["коктейли","романтика","лаунж"]},
+  {n:"Кабинет (Kabinet)",c:"bars",m:"hidden",t:"вечер",w:"крытое",u:"https://spb.restoran.ru/spb/detailed/restaurants/kabinet/",
+   d:"Дореволюционный «кабинет» + бутлегерский спикизи 20-х. Полумрак, тет-а-тет, только по брони. Камерно и романтично.",
+   a:"Малая Садовая ул. 8 · м. Гостиный двор",p:"ср–вс 20–03 · бронь по телефону",g:["коктейли","романтика","лаунж"]},
+  {n:"Apotheke Bar (Аптека)",c:"bars",m:"hidden",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/apteka-1",
+   d:"Бар-аптека без меню — миксуют под твой вкус, редкие спирты. Звонок в дверь. Интимный формат для разговора вдвоём.",
+   a:"Кирочная ул. 12 · м. Чернышевская",p:"вечер · уточнить (был переезд)",g:["коктейли","романтика","лаунж"]},
+  {n:"Daiquiri Bar",c:"bars",m:"mid",t:"вечер",w:"крытое",u:"https://dbar.ru/",
+   d:"Один из старейших и сильнейших коктейльных баров (18 лет), карта 250+ позиций, профессиональный бартендинг. Качество эталонное.",
+   a:"Большая Конюшенная ул. 1 · м. Невский проспект",p:"16–04 · ~2000–3000 ₽",g:["коктейли","лаунж"]},
+  {n:"Orthodox",c:"bars",m:"mid",t:"вечер",w:"крытое",u:"http://orthodox.bar/",
+   d:"«Бар года 2025» (команда из мирового топ-50): коктейли по мотивам русской классики (Чайковский, Достоевский) + кухня.",
+   a:"Рубинштейна 2 / Восстания 4 · м. Маяковская",p:"18–02, пт-сб до 04 · ~1800–2500 ₽",g:["коктейли","романтика","еда"]},
+  {n:"Полторы комнаты × El Copitas",c:"bars",m:"hidden",t:"вечер",w:"крытое",u:"https://www.sobaka.ru/bars/chtogdeest/215644",
+   d:"Коллаборация музея Бродского и барной команды El Copitas: литература + лучший микс города. Один из главных барных поводов лета 2026.",
+   a:"район дома Мурузи, Литейный · м. Чернышевская",p:"уточнить · новинка",g:["коктейли","романтика","искусство","новое"]},
+  {n:"Big Wine Freaks",c:"bars",m:"mid",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/place/big-wine-freaks",
+   d:"Апскейл-винотека: биодинамика, артизанальное шампанское, классические рислинги. Модная публика Петроградки. Бронь за дни.",
+   a:"Инструментальная ул. 3В · м. Петроградская",p:"18–01, пт-сб до 02 · ~2200 ₽",g:["вино","романтика","лаунж"]},
+  {n:"Bien Sûr",c:"bars",m:"mid",t:"вечер",w:"крытое",u:"https://bien-sur.ru/",
+   d:"Винтажное французское бистро — фарфор, сервизы, искусство. Игристые/вина/коктейли + кухня. Уютно-романтично, «как в Париже».",
+   a:"Мастерская ул. 9 · м. Спасская / Садовая",p:"9–23 · ~1500–2500 ₽",g:["вино","романтика"]},
+  {n:"Do Immigration",c:"bars",m:"hidden",t:"вечер",w:"частично",u:"https://yandex.ru/maps/org/do_immigration/1269716763",
+   d:"Двухуровневый винный лофт, этажи соединены мостиком, веранда на соседской крыше. 30+ вин по бокалам, неон. Атмосферно.",
+   a:"ул. Восстания 24/27 («Флигель») · м. Пл. Восстания",p:"с 18:00 · бокал от 200 ₽",g:["вино","романтика","лаунж","вид"]},
+  {n:"Винный шкаф",c:"bars",m:"mid",t:"вечер",w:"крытое",u:"https://tomesto.ru/spb/places/vinnyy-shkaf",
+   d:"Винный бар на Рубинштейна, демократичные цены, лёгкие закуски, устрицы, сыр. «Зайти на бокал» в сердце барной улицы.",
+   a:"ул. Рубинштейна 9 · м. Достоевская",p:"вечер · ~1500–2500 ₽",g:["вино","лаунж"]},
+  {n:"Faro",c:"bars",m:"hidden",t:"вечер",w:"крытое",u:"https://www.restoclub.ru/spb/search/bary-sankt-peterburga",
+   d:"Специализация на креплёных винах — портвейн, херес, мадера. Нишево, для пары, которая хочет нестандартного к разговору.",
+   a:"ул. Маяковского 18 · м. Маяковская",p:"вечер · уточнить",g:["вино","лаунж"]},
+  {n:"The Hat Bar",c:"bars",m:"mid",t:"вечер",w:"крытое",u:"https://yandex.ru/maps/org/the_hat_bar/1142257688",
+   d:"Джаз-бар в стиле 50-х, живые джаз-составы по вечерам, летом веранда на крыше. Для тех, кто любит музыку и вайб «нуар».",
+   a:"ул. Белинского 9 · м. Гостиный двор",p:"19–03, пт-сб до 04 · уточнить",g:["коктейли","романтика","лаунж"]},
+
+  // ===== ИСКУССТВО И МУЗЕИ =====
+  {n:"Музей Фаберже (Шуваловский дворец)",c:"art",m:"turist",t:"любое",w:"крытое",u:"https://fabergemuseum.ru/posetitelyam/biletyi-v-muzej",
    d:"Крупнейшая в мире коллекция Фаберже, императорские пасхальные яйца, в роскошных дворцовых интерьерах. «Дорогой» Петербург.",
-   a:"наб. Фонтанки 21 · центр",p:"10–21 · цена уточнить",g:["музей","культура","фото"]},
-  {n:"Эрарта",c:"culture",m:"turist",t:"любое",w:"крытое",
-   d:"Крупнейший частный музей современного искусства: постоянная коллекция 5 этажей + «Изоанимация». Беспроигрышно в дождь, работает до 23:00.",
-   a:"29-я линия В.О. 2 · Васильевский о.",p:"кроме вт, 11–23 · билет уточнить",g:["культура","выставка","музей","фото"]},
-  {n:"«Вернувшиеся» · иммерсив-шоу",c:"culture",m:"mid",t:"вечер",w:"крытое",
-   d:"Эталонное иммерсивное шоу по Ибсену: особняк XVIII в., 50 комнат, маски, ~2,5 ч погружения, зритель ходит сам. Сильное «вау».",
-   a:"особняк на Дворцовой набережной",p:"по репертуару · билеты kassir/ticketland",g:["иммерсив","событие","культура"]},
-  {n:"Русский музей · летние блокбастеры",c:"culture",m:"turist",t:"день",w:"крытое",
-   d:"Сразу несколько крупных проектов в июне 2026 (Эрьзя, Кончаловский, Шишкин). Корпуса — крытый маршрут на пасмурный день.",
-   a:"Михайловский дворец и корпуса · центр",p:"билеты по корпусам · уточнить",g:["культура","выставка","музей"]},
-  {n:"«На ножках» · Новая Голландия",c:"culture",m:"mid",t:"любое",w:"крытое",
-   d:"Исследовательский проект про «транзит» в искусстве и фольклоре — современный разговорный формат + сам остров.",
-   a:"Павильон, о. Новая Голландия",p:"3 июня – 19 июля · вход на остров бесплатно",g:["культура","выставка"]},
-  {n:"KGallery · «Окно, в котором…»",c:"culture",m:"hidden",t:"любое",w:"крытое",
-   d:"Камерная частная выставка: три поколения семьи писали одно окно дома в Комарово. Тонкий петербургский сюжет.",
-   a:"наб. Фонтанки 24 · центр",p:"открытие 17 июня · цена уточнить",g:["культура","выставка"]},
-  {n:"Гранд Макет Россия",c:"culture",m:"mid",t:"день",w:"крытое",
-   d:"Крупнейший макет страны в движении: поезда, машины, смена дня и ночи. Залипательно и нетипично, понравится обоим.",
-   a:"ул. Цветочная 16 · Московский р-н",p:"цена уточнить",g:["музей","фото","событие"]},
-  {n:"Музей оптики (ИТМО)",c:"culture",m:"hidden",t:"день",w:"крытое",
-   d:"11 залов про свет и цвет: голограммы, «заморозить» свою тень, рисовать светом. Игровой формат, оживляет пасмурный день.",
-   a:"Биржевая линия 14 · Васильевский о.",p:"уточнить",g:["музей","иммерсив","фото"]},
-  {n:"Музей искусства СПб XX–XXI (МИСП)",c:"culture",m:"hidden",t:"день",w:"крытое",
-   d:"Единственное собрание искусства Ленинграда–Петербурга XX–XXI вв. Только сменные экспозиции — выставку июня проверить заранее.",
-   a:"наб. канала Грибоедова 103 · центр",p:"уточнить афишу/цену",g:["музей","выставка","культура"]},
-  {n:"Музей стрит-арта",c:"culture",m:"hidden",t:"день",w:"открытое",
+   a:"наб. Фонтанки 21 · центр",p:"10–21 · билеты онлайн",g:["музей","культура","фото"]},
+  {n:"Эрарта",c:"art",m:"turist",t:"любое",w:"крытое",u:"https://www.erarta.com/",date:"весь визит",
+   d:"Крупнейший частный музей совриска России: постоянная коллекция 5 этажей + «Изоанимация». Беспроигрышно в дождь, работает до 23:00.",
+   a:"29-я линия В.О. 2 · Васильевский о.",p:"кроме вт, 11–23 · 1500 ₽",g:["искусство","современное","выставка","музей"]},
+  {n:"Главный штаб Эрмитажа · «О сладости мира. Индия»",c:"art",m:"turist",t:"день",w:"крытое",u:"https://www.hermitagemuseum.org/wps/portal/hermitage/what-s-on/temp_exh/",date:"до 4 окт",
+   d:"Мастхэв: 11 индийских современных художников в диалоге с экспонатами Эрмитажа. Совриск мирового уровня в имперских стенах.",
+   a:"Дворцовая пл. 6/8 · м. Адмиралтейская",p:"кроме пн · билет уточнить",g:["искусство","современное","выставка","культура"]},
+  {n:"Marina Gisich Gallery · «Земля»",c:"art",m:"turist",t:"день",w:"крытое",u:"https://www.gisich.com/ru/exhibitions/",date:"до 10 сен",
+   d:"Галерея совриска №1 в городе. Виталий Пушницкий: живопись, графика, керамика + новая книга художника. Идеальная точка входа.",
+   a:"наб. Фонтанки 121 · м. Садовая",p:"вт–сб · вход уточнить",g:["искусство","современное","выставка","галерея"]},
+  {n:"Anna Nova · «Пик неопределённости»",c:"art",m:"mid",t:"любое",w:"крытое",u:"https://www.annanova-gallery.ru/",date:"вернисаж 19.06",
+   d:"Топовая галерея совриска. Скульптура и видео-арт под выставку. Вернисаж 19 июня — шанс попасть на открытие.",
+   a:"ул. Жуковского 28 · м. Маяковская",p:"вт–сб · бесплатно",g:["искусство","современное","вернисаж","галерея"]},
+  {n:"MYTH Gallery · «Фокус: Перформанс»",c:"art",m:"hidden",t:"день",w:"крытое",u:"https://mythgallery.art/",date:"до 19 июля",
+   d:"Молодая сильная галерея. По субботам — сам перформанс, в будни — следы-артефакты. Редкий живой формат с двумя режимами.",
+   a:"ул. Чайковского 61 · м. Чернышевская",p:"перформансы по сб · уточнить",g:["искусство","современное","перформанс","галерея"]},
+  {n:"Левашовский хлебозавод · Андрей Кузькин",c:"art",m:"mid",t:"день",w:"крытое",u:"https://levashovsky.ru/",date:"откр. 20.06",
+   d:"Крупный современный художник: хлебные скульптуры + документация перформансов на бывшем хлебозаводе (рифма к материалу).",
+   a:"Барочная ул. 4А, Петроградка · м. Чкаловская",p:"20 июня – 26 июля · уточнить",g:["искусство","современное","вернисаж","культура"]},
+  {n:"KGallery · «Окно, в котором…»",c:"art",m:"mid",t:"любое",w:"крытое",u:"https://kgallery.ru/",date:"откр. 17.06",
+   d:"Три поколения ленинградско-петербургских мастеров. Сильная институция на стыке классики XX в. и совриска.",
+   a:"наб. Фонтанки 24 · м. Гостиный двор",p:"11–20, вход свободный",g:["искусство","выставка","галерея"]},
+  {n:"Русский музей · «Великие. Образ женщины»",c:"art",m:"turist",t:"день",w:"крытое",u:"https://ticket.rusmuseum.ru/",date:"с 6 июня",
+   d:"300+ работ (Репин, Брюллов, Серов, Кустодиев). Темой «образ женщины» цепляет гостью; масштабное событие сезона.",
+   a:"Михайловский дворец, Инженерная 4 · м. Гостиный двор",p:"по сеансам · билеты онлайн",g:["искусство","выставка","культура","музей"]},
+  {n:"«Пабло Пикассо. Параграфы» · квартал Брусницын",c:"art",m:"mid",t:"день",w:"крытое",u:"https://afisha.yandex.ru/saint-petersburg/art",date:"до 8 ноя",
+   d:"Пикассо в новой модной индустриальной арт-локации (бывший кожевенный завод на В.О., рядом с Севкабелем). Совместить с прогулкой по порту.",
+   a:"Кожевенная линия · Васильевский о.",p:"уточнить",g:["искусство","выставка","культура","новое"]},
+  {n:"Цифергауз · цифровое искусство",c:"art",m:"mid",t:"любое",w:"крытое",u:"https://zifergauz.ru/",
+   d:"Единственная в городе площадка чисто цифрового/медиа-арта на Новой Голландии. Готовится проект про балерину Диану Вишнёву (реж. Могучий).",
+   a:"Новая Голландия, «Дом 12» · м. Адмиралтейская",p:"даты проекта уточнить",g:["искусство","современное","медиа-арт"]},
+  {n:"DiDi Gallery · «План эвакуации»",c:"art",m:"hidden",t:"день",w:"крытое",u:"https://didigallery.com/ru",date:"до 28 июня",
+   d:"Галерея на Васильевском, инсталляция «План эвакуации» застаётся на 20-е числа июня. Камерно, для ценителей.",
+   a:"Большой пр. В.О. 62 · м. Василеостровская",p:"уточнить",g:["искусство","современное","галерея"]},
+  {n:"Музей искусства СПб XX–XXI (МИСП)",c:"art",m:"mid",t:"день",w:"крытое",u:"https://mispxx-xxi.ru/for-visitors/",
+   d:"Музей переехал в особняк Алафузова (2026), коллекция 12 000+ работ. В июне — «АФРИКА. Сергей Бугаев», лидер «Новых художников».",
+   a:"наб. канала Грибоедова 101–103 · м. Садовая",p:"вт,чт–вс 12–20 · 400 ₽, 3-я ср бесплатно",g:["искусство","современное","выставка","музей","новое"]},
+  {n:"Музей стрит-арта",c:"art",m:"hidden",t:"день",w:"открытое",u:"https://streetartmuseum.ru/",
    d:"Музей на действующем заводе: экспозицию рисуют, а не вешают, масштабные работы уличных художников. В основном открытая площадка.",
-   a:"шоссе Революции 84 · Красногвардейский р-н",p:"летний сезон · уточнить расписание/цену",g:["музей","фото"]},
+   a:"шоссе Революции 84 · Красногвардейский р-н",p:"ср–вс 12–20 · проверить выставку",g:["искусство","музей","фото"]},
+  {n:"Гранд Макет Россия",c:"art",m:"mid",t:"день",w:"крытое",u:"https://grandmaket.com/",
+   d:"Крупнейший макет страны в движении: поезда, машины, смена дня и ночи. Залипательно и нетипично, понравится обоим.",
+   a:"ул. Цветочная 16 · Московский р-н",p:"10–20 · ~980 ₽",g:["музей","фото","событие"]},
+  {n:"Музей оптики (ИТМО)",c:"art",m:"hidden",t:"день",w:"крытое",u:"https://afisha.yandex.ru/saint-petersburg/art/places/muzei-optiki-universiteta-itmo",
+   d:"11 залов про свет и цвет: голограммы, «заморозить» свою тень, рисовать светом. Игровой формат, оживляет пасмурный день.",
+   a:"Биржевая линия 14 · Васильевский о.",p:"сеансы каждые 20 мин · 350–400 ₽",g:["музей","современное","фото"]},
+  {n:"Центр Курёхина · «Корпорация счастья»",c:"art",m:"hidden",t:"любое",w:"крытое",u:"https://www.kuryokhin.net/",date:"откр. 27.06",
+   d:"Science-art выпускников ИТМО «Искусство и наука»: 25 молодых художников, технологии + публичная программа. Если визит до конца июня.",
+   a:"Средний пр. В.О. 93А · м. Василеостровская",p:"27 июня – 28 июля · уточнить",g:["искусство","современное","вернисаж","медиа-арт"]},
+
+  // ===== СЦЕНА: ТЕАТР / БАЛЕТ / КОНЦЕРТЫ =====
+  {n:"Мариинский театр · Звёзды белых ночей",c:"theatre",m:"turist",t:"вечер",w:"крытое",u:"https://www.mariinsky.ru/ru/playbill/playbill/?year=2026&month=6",date:"весь визит",
+   d:"Главный летний фестиваль страны: опера и балет на трёх сценах почти каждый вечер. «Лебединое озеро» 14/19/27/28.06, «Сила судьбы» 26.06. Билеты только офсайт.",
+   a:"Театральная пл. 1 · Коломна",p:"~1500–12000 ₽ · брать заранее",g:["театр","балет","опера","культура","событие"]},
+  {n:"Михайловский театр",c:"theatre",m:"turist",t:"вечер",w:"крытое",u:"https://mikhailovsky.ru/afisha/performances/",
+   d:"Роскошный исторический зал у Русского музея. В репертуаре «Лебединое озеро», «Спартак», «Корсар», «Дон Кихот». Конкретные даты — на афише.",
+   a:"пл. Искусств 1 · м. Невский проспект",p:"~1 200–9 000 ₽",g:["театр","балет","опера","культура"]},
+  {n:"Филармония им. Шостаковича",c:"theatre",m:"mid",t:"вечер",w:"крытое",u:"https://www.philharmonia.spb.ru/afisha/grand/",
+   d:"Легендарный Большой зал, где впервые звучала «Ленинградская» симфония. Академическая симфоническая классика.",
+   a:"ул. Михайловская 2 · м. Гостиный двор",p:"~800–5 000 ₽",g:["концерт","культура","событие"]},
+  {n:"Академическая Капелла",c:"theatre",m:"mid",t:"вечер",w:"крытое",u:"https://www.capella-spb.ru/ru/afisha",
+   d:"Хоровая/оркестровая классика и органные программы; акустика в числе лучших в мире, исторический орган Walcker 1891 г.",
+   a:"наб. реки Мойки 20 · м. Адмиралтейская",p:"30.06 — закрытие сезона · уточнить",g:["концерт","орган","культура"]},
+  {n:"БДТ им. Товстоногова",c:"theatre",m:"mid",t:"вечер",w:"крытое",u:"https://bdt.spb.ru/afisha/",
+   d:"Драматический театр высшей лиги. В июне: «Слава» (17.06), премьера «Холопы», «Исчезновение» на 2-й сцене (20–21.06).",
+   a:"наб. Фонтанки 65 · м. Гостиный двор",p:"~800–6 000 ₽",g:["театр","культура","событие"]},
+  {n:"Александринский театр",c:"theatre",m:"mid",t:"вечер",w:"крытое",u:"https://alexandrinsky.ru/afisha-i-bilety/",
+   d:"Старейшая сцена России в имперском зале Росси. Июнь: «Воскресение» (по 28.06), «Литургия Zero» (13–14.06), «На дне», «Женитьба».",
+   a:"пл. Островского 6 · м. Гостиный двор",p:"~700–5 000 ₽",g:["театр","культура","событие"]},
+  {n:"«В свечах» · неоклассика в особняке Половцова",c:"theatre",m:"hidden",t:"вечер",w:"крытое",u:"https://spb.ticketland.ru/muzei/osobnyak-polovcova-dom-arkhitektora/",
+   d:"Концерт классики при свечах в парадных интерьерах особняка («Вивальди. Времена года» 16.06). Атмосферный свидательный формат.",
+   a:"Большая Морская 52 · м. Адмиралтейская",p:"от ~2 700 ₽",g:["концерт","классика","культура","романтика"]},
+  {n:"Джаз-клуб Игоря Бутмана",c:"theatre",m:"mid",t:"вечер",w:"крытое",u:"https://spb.butmanclub.ru/",
+   d:"Флагманский джаз города + ресторан. Ежевечерние сеты: Голощёкин, Петербургский джаз-оркестр и др. Камерный вечерний формат.",
+   a:"наб. реки Фонтанки 13 · м. Гостиный двор",p:"~1 500–4 000 ₽",g:["концерт","джаз","культура","событие"]},
+  {n:"Петрикирхе · орган при свечах",c:"theatre",m:"hidden",t:"вечер",w:"крытое",u:"https://afisha.yandex.ru/saint-petersburg/concert/places/petrikirkhe/schedule",
+   d:"Органные и «при свечах» программы в лютеранском соборе на Невском (Бах). Необычная атмосферная локация.",
+   a:"Невский пр. 22–24 · м. Невский проспект",p:"~700–2 500 ₽",g:["концерт","орган","культура","событие"]},
+
+  // ===== ДАТИРОВАННЫЕ СОБЫТИЯ =====
+  {n:"Алые Паруса",c:"events",m:"turist",t:"вечер",w:"открытое",u:"https://www.kp.ru/afisha/spb/prazdniki/alye-parusa-v-sankt-peterburge/",date:"27 июня",
+   d:"⭐ Главный праздник выпускников: бриг с алыми парусами и салют над Невой. Смотреть бесплатно с Английской наб. / стрелки В.О. Кульминация ~00:30.",
+   a:"акватория Невы · набережные центра",p:"бесплатно с набережных · центр перекрывают",g:["событие","праздник","белые ночи"]},
+  {n:"Фестиваль «Матушка Земля»",c:"events",m:"mid",t:"день",w:"открытое",u:"https://afisha.yandex.ru/saint-petersburg/festival/matushka-zemlia",date:"20–21 июня",
+   d:"Фестиваль современной российской культуры: фолк + актуальный звук, модные показы, гастро, маркет дизайнеров. У залива в Севкабеле.",
+   a:"Севкабель Порт · м. Приморская",p:"1000–1500 ₽ · бесплатно в русском костюме",g:["событие","фестиваль","музыка"]},
+  {n:"Open Coffee Fest",c:"events",m:"hidden",t:"день",w:"частично",u:"https://sevcableport.ru/afisha/",date:"20–21 июня",
+   d:"Кофейный фестиваль: обжарщики города, альтернативные методы, чемпионаты бариста, дегустации, маркет. В один уикенд с «Матушкой Землёй».",
+   a:"Севкабель Порт, «Цех» · м. Приморская",p:"по регистрации (бюджетно)",g:["событие","фестиваль","кофе"]},
+  {n:"ЭтоЭтно · фестиваль этно-музыки",c:"events",m:"mid",t:"вечер",w:"открытое",u:"https://etoetno.ru/",date:"27–28 июня",
+   d:"Большой опен-эйр у воды: артисты из Индии, Сербии, Китая, Узбекистана; Сати Казанова, ДиДюЛя. ВХОД СВОБОДНЫЙ — сильная замена платным концертам.",
+   a:"Севкабель Порт · м. Приморская",p:"с 18:00 · бесплатно",g:["событие","фестиваль","музыка"]},
+  {n:"Roof Fest · концерты на крышах",c:"events",m:"mid",t:"вечер",w:"открытое",u:"https://afisharoof.com/",date:"19–21 июня",
+   d:"Концерты на крыше с видом на залив: поп-хиты с симфоническим оркестром (19.06), Radiohead-трибьют у воды (20.06), «Пилот» (21.06).",
+   a:"Roof Place, Кожевенная линия · Васильевский о.",p:"от 1500 ₽",g:["событие","музыка","вид"]},
+  {n:"Разводка мостов · белые ночи",c:"events",m:"turist",t:"вечер",w:"открытое",u:"https://www.tourister.ru/world/europe/russia/city/saint_petersburg/publications/1228",date:"11 июня–2 июля",
+   d:"Визитка Питера: ночное разведение мостов. Лучший вид — Дворцовый мост на фоне Петропавловки. Дворцовый разводят ~01:10.",
+   a:"Дворцовая / Адмиралтейская наб.",p:"бесплатно · или с воды (теплоход)",g:["событие","белые ночи","вид","романтика"]},
+  {n:"Летний театр на Новой Голландии",c:"events",m:"mid",t:"вечер",w:"открытое",u:"https://www.newhollandsp.ru/summer-theater/",date:"пт-сб-вс",
+   d:"Джаз, академ/экспериментальная музыка, независимые театры, перформансы во дворе «Бутылки». Сама Новая Голландия — топ-локация для вечера у воды.",
+   a:"о. Новая Голландия · м. Адмиралтейская",p:"билет на событие · уточнить сетку",g:["событие","фестиваль","музыка"]},
+  {n:"Книжные аллеи",c:"events",m:"hidden",t:"день",w:"открытое",u:"https://www.malayakonyushennaya.ru/",date:"весь июнь",
+   d:"Открытый книжный фестиваль-ярмарка под открытым небом, лекции и встречи. Бесплатно, в самом центре.",
+   a:"Малая Конюшенная ул. · м. Невский проспект",p:"12–21, бесплатно",g:["событие","фестиваль","книги"]},
+
+  // ===== РЕЛАКС И ШОПИНГ =====
+  {n:"Дегтярные бани",c:"relax",m:"turist",t:"любое",w:"крытое",u:"https://www.bani.spb.ru/degtyarnie-bani.html",
+   d:"Легендарные парные, 5 классов, спецы по парению и все виды массажа (веничный, мыльный, криогенный). Снять класс на двоих.",
+   a:"ул. Дегтярная 1А · м. Пл. Восстания",p:"класс на двоих 20 000–25 000 ₽/ч; общий от 500 ₽",g:["баня","релакс","романтика"]},
+  {n:"Ямские бани",c:"relax",m:"mid",t:"любое",w:"крытое",u:"https://www.yamskie.ru/",
+   d:"Старейшие бани центра (1859): общие классы и люкс, индивидуальные номера с русской парной на карельском камне, криосауна.",
+   a:"ул. Достоевского 9 · м. Владимирская",p:"уточнить",g:["баня","релакс"]},
+  {n:"A2SPA · хаммам для двоих",c:"relax",m:"hidden",t:"любое",w:"крытое",u:"https://www.a2spa.ru/spa-programmyi-dlya-dvoix",
+   d:"Камерный спа: турецкий хаммам + финская сауна + бассейн с гидромассажем + аромакомната. Есть спа-программы для двоих.",
+   a:"центр · адрес на офсайте",p:"программы для двоих · цена уточнить",g:["спа","релакс","романтика"]},
+  {n:"Удельный рынок (Уделка)",c:"relax",m:"turist",t:"день",w:"открытое",u:"https://2gis.ru/spb/firm/70000001032018960",
+   d:"Главная легендарная барахолка города: винтаж, винил, ретро-фототехника, искусство, секонд. Бесконечный квест для пары.",
+   a:"м. Удельная (проверить статус станции)",p:"сб–вс 8–17 · вход свободный",g:["рынок","винтаж","шопинг"]},
+  {n:"Василеостровский (Андреевский) рынок",c:"relax",m:"mid",t:"день",w:"крытое",u:"https://saintpetersburg.zagranitsa.com/place/19373/vasileostrovskii-andreevskii-rynok",
+   d:"Историческое здание у Андреевского собора, внутри современный фуд-корт + рынок (рыба, сыры, овощи). «Погреться и поесть» в пасмурь.",
+   a:"Большой пр. В.О. 18 · м. Василеостровская",p:"уточнить (рынок с 9:00)",g:["рынок","релакс","еда"]},
+  {n:"Au Pont Rouge",c:"relax",m:"turist",t:"день",w:"крытое",u:"https://www.be-in.ru/mall/3175-au-pont-rouge/",
+   d:"Премиальный концепт-универмаг в историческом здании у Красного моста: нишевые бренды, парфюм, кофе. Красивый ретейл как достопримечательность.",
+   a:"наб. Мойки 73/15 · м. Адмиралтейская",p:"~11–21 · уточнить",g:["шопинг"]},
+  {n:"ДЛТ",c:"relax",m:"turist",t:"день",w:"крытое",u:"https://2gis.ru/spb/search/ДЛТ Большая Конюшенная 21",
+   d:"Исторический флагман-универмаг с атриумом, люкс-бренды, эталон «красивого ретейла». Побродить, выпить кофе под стеклянной крышей.",
+   a:"Большая Конюшенная 21–23 · м. Невский проспект",p:"~10–22 · уточнить",g:["шопинг"]},
+  {n:"Kissa Market (винтаж)",c:"relax",m:"hidden",t:"день",w:"крытое",u:"https://2gis.ru/spb/firm/70000001041613263",
+   d:"Камерный винтаж в центре: отобранная ностальгическая одежда + собственный пошив в духе 1970-х. Атмосферный, не фаст-фэшн.",
+   a:"Большая Конюшенная 9, 2 этаж · м. Невский проспект",p:"15–20 · комиссионные цены",g:["винтаж","шопинг"]},
+  {n:"«Спасибо!» · charity-секонд",c:"relax",m:"mid",t:"день",w:"крытое",u:"https://www.spasiboshop.org/shops/",
+   d:"Культовый питерский чарити-секонд, отсортированные вещи, осмысленное потребление. Несколько точек — удобно встроить в маршрут.",
+   a:"Гороховая 50, Ковенский 23 и др.",p:"низкий ценник · уточнить часы",g:["винтаж","шопинг"]},
+  {n:"Все свободны (книжный)",c:"relax",m:"mid",t:"любое",w:"крытое",u:"https://yandex.ru/maps/org/vse_svobodny/20063767221/",
+   d:"Культовый независимый книжный (с 2011). Переехал с Мойки — теперь Некрасова 23. Атмосфера, события, редкие издания.",
+   a:"ул. Некрасова 23 · м. Маяковская",p:"с 11:00 · уточнить",g:["книги","релакс"]},
+  {n:"Жёлтый двор (книжный)",c:"relax",m:"hidden",t:"любое",w:"крытое",u:"https://2gis.ru/spb/firm/70000001028208869",
+   d:"Уютный независимый книжный со своим небольшим издательством, камерная атмосфера. Рядом с завтрачным кластером у Чернышевской.",
+   a:"ул. Маяковского 15 · м. Маяковская",p:"11–22",g:["книги","релакс"]},
+
+  // ===== НОВОЕ 2026 =====
+  {n:"El Copitas · Русский проект",c:"new",m:"mid",t:"вечер",w:"крытое",u:"https://www.sobaka.ru/bars/opening/209950",
+   d:"Команда одного из лучших баров мира впервые делает большой ресторан: русская кухня на огне, ферментация. Главное гастрособытие сезона. Дом Мурузи.",
+   a:"Литейный × ул. Короленко 14 · м. Чернышевская",p:"открытие 2026 · уточнить",g:["новое","еда","бар"]},
+  {n:"Белый Рябчик",c:"new",m:"mid",t:"вечер",w:"крытое",u:"https://www.sobaka.ru/bars/opening/213138",
+   d:"Русская кухня на открытом огне, ферментация, хлеб на дровах. Открылся к 2026, попал во все гиды. Камерный, для «своих».",
+   a:"ул. Блохина 6 · м. Спортивная",p:"17–23 · 1 500–2 500 ₽",g:["новое","еда"]},
+  {n:"Pont",c:"new",m:"mid",t:"вечер",w:"частично",u:"https://piter.now/kuda-shodit-vesnoy-v-peterburge-2026-15-novyh-mest-restoranov-i-muzeev/",
+   d:"Raw-bar + черноморская кухня: устрицы и тунец на льду, камин, сигарная, летняя терраса. Формат для города редкий.",
+   a:"ул. Ждановская 45 · м. Чкаловская",p:"12–23 · 2 000–3 500 ₽",g:["новое","еда"]},
+  {n:"AVA Bistro (Новая Голландия)",c:"new",m:"turist",t:"любое",w:"крытое",u:"https://piter.now/kuda-shodit-vesnoy-v-peterburge-2026-15-novyh-mest-restoranov-i-muzeev/",
+   d:"Бистро в здании XVIII века на острове, витрина хлеба и десертный стол. Свежий повод заглянуть в Новую Голландию не только ради лужайки.",
+   a:"Новая Голландия 2И · м. Адмиралтейская",p:"10–23 · 1 500–2 000 ₽",g:["новое","еда","прогулка"]},
+  {n:"TONY",c:"new",m:"mid",t:"день",w:"крытое",u:"https://piter.now/kuda-shodit-vesnoy-v-peterburge-2026-15-novyh-mest-restoranov-i-muzeev/",
+   d:"Бистро + спешелти-кофейня от основателей Keny и Noon: византийский декор, иконопись, стулья как в храме, своя пекарня. Открылось март 2026.",
+   a:"Озёрный пер. 7 · м. Чёрная речка",p:"9–22 · 1 200–2 000 ₽",g:["новое","еда","кофе"]},
+  {n:"Зайцы (Ленфильм)",c:"new",m:"mid",t:"вечер",w:"крытое",u:"https://piter.now/kuda-shodit-vesnoy-v-peterburge-2026-15-novyh-mest-restoranov-i-muzeev/",
+   d:"Музыкальный ресторан на территории киностудии Ленфильм: советский модернизм + кинореквизит в интерьере. Место с атмосферой.",
+   a:"Каменноостровский пр. 10А · м. Горьковская",p:"уточнить · от 2 000 ₽",g:["новое","еда"]},
+  {n:"Невский, 1",c:"new",m:"turist",t:"вечер",w:"крытое",u:"https://www.sobaka.ru/bars/opening/213138",
+   d:"Люксовый итальянский с видом на Зимний дворец, винтовая лестница в сигарный клуб, реставрация по архивным фото. Адрес — дом №1 на Невском.",
+   a:"Невский пр. 1/4 · м. Адмиралтейская",p:"уточнить (премиум)",g:["новое","еда","вид"]},
+  {n:"Alkemista · бар-лаборатория",c:"new",m:"hidden",t:"вечер",w:"крытое",u:"https://www.sobaka.ru/bars/opening/213138",
+   d:"«Лаборатория спиртов» в квартале Писателей: джины, вермуты, ликёры и биттеры собственного производства, коктейли с цветами спилантеса.",
+   a:"ул. Жуковского 14 · м. Маяковская",p:"коктейль ~800–1 200 ₽",g:["новое","бар"]},
+  {n:"Мануфактура 10/12",c:"new",m:"hidden",t:"любое",w:"крытое",u:"https://piter.now/kuda-shodit-vesnoy-v-peterburge-2026-15-novyh-mest-restoranov-i-muzeev/",
+   d:"Бывшая текстильная фабрика (1924), 10 000+ м² на пяти этажах, круглосуточный свободный вход. Новая точка притяжения 2026: мастерские, события.",
+   a:"ул. Красного Текстильщика 10-12 · м. Чернышевская",p:"24/7 · бесплатно",g:["новое","пространство","искусство"]},
+  {n:"Набережная Охты · «Ильинская слобода»",c:"new",m:"hidden",t:"день",w:"открытое",u:"https://www.rbc.ru/spb_sz/26/10/2024/6719fdde9a7947f3b7f6f86b",
+   d:"Новый садово-парковый ансамбль у воды (2026): скалодром, воркаут, качели, смотровые. Свежее благоустройство без туристов.",
+   a:"шоссе Революции 63 · м. Новочеркасская + транспорт",p:"открытое пространство, бесплатно",g:["новое","прогулка"]}
 ];
 
+// ============ RENDER ============
 const TABS = [
   {k:"all",label:"Всё"},
-  {k:"must",label:"⛪ Исаакий и must-see"},
+  {k:"must",label:"⛪ Must-see"},
   {k:"sights",label:"🏛 Неочевидное"},
-  {k:"parks",label:"🌳 Парки и прогулки"},
-  {k:"views",label:"🔭 Виды и смотровые"},
-  {k:"country",label:"🍓 Клубника и загород"},
-  {k:"hookah",label:"💨 Кальян"},
+  {k:"art",label:"🎨 Искусство и музеи"},
+  {k:"theatre",label:"🎭 Сцена"},
+  {k:"events",label:"📅 События"},
+  {k:"parks",label:"🌳 Прогулки"},
+  {k:"districts",label:"🗺 Районы"},
+  {k:"views",label:"🔭 Виды"},
+  {k:"breakfast",label:"🍳 Завтраки"},
+  {k:"food",label:"🍽 Рестораны"},
   {k:"rooftop",label:"🍷 Еда с видом"},
+  {k:"bars",label:"🍸 Бары и вино"},
+  {k:"hookah",label:"💨 Кальян"},
   {k:"work",label:"💻 Поработать"},
-  {k:"culture",label:"🎭 Культура"},
+  {k:"country",label:"🍓 Загород"},
+  {k:"relax",label:"🧖 Релакс и шопинг"},
+  {k:"new",label:"✨ Новое 2026"}
 ];
-
 const MAIN_LABEL = {turist:"популярное",mid:"знают местные",hidden:"секрет"};
 const W_ICON = {"крытое":"☂","частично":"⛅","открытое":"☀"};
-
 let state = {cat:"all", main:"all", time:"all", covered:false, q:""};
 
-// build tabs
-const tabsEl = document.getElementById('tabs');
+// week program
+const daytabs=document.getElementById('daytabs'), daypanel=document.getElementById('daypanel');
+function renderDay(i){
+  const d=DAYS[i];
+  daypanel.innerHTML=`<h3>${d.k} · ${d.title}</h3><p class="dsub">${d.sub}</p><ul class="tl">`+
+    d.items.map(it=>`<li><span class="tm">${it.tm}</span><span class="dot"></span><b>${it.n}</b>`+
+    (it.ev?`<span class="ev">${it.ev}</span>`:'')+`<small>${it.s}</small></li>`).join('')+`</ul>`;
+  document.querySelectorAll('#daytabs .daytab').forEach((x,j)=>x.classList.toggle('on',j===i));
+}
+DAYS.forEach((d,i)=>{
+  const b=document.createElement('button');b.className='daytab'+(i===0?' on':'');
+  b.innerHTML=`<span class="dn">${d.k}</span>${d.title}`;b.onclick=()=>renderDay(i);
+  daytabs.appendChild(b);
+});
+renderDay(0);
+
+// anchors
+document.getElementById('anchorsGrid').innerHTML=ANCHORS.map(a=>
+  `<div class="anc${a.star?' star':''}"><div class="ad">${a.d}</div><div class="at">${a.t}</div><div class="ax">${a.x}</div></div>`).join('');
+
+// tabs
+const tabsEl=document.getElementById('tabs');
 TABS.forEach(t=>{
-  const b=document.createElement('button');
-  b.className='tab'+(t.k==='all'?' on':'');
-  b.textContent=t.label; b.dataset.cat=t.k;
-  b.onclick=()=>{state.cat=t.k;document.querySelectorAll('#tabs .tab').forEach(x=>x.classList.toggle('on',x===b));render();};
+  const b=document.createElement('button');b.className='tab'+(t.k==='all'?' on':'');
+  b.textContent=t.label;b.onclick=()=>{state.cat=t.k;document.querySelectorAll('#tabs .tab').forEach(x=>x.classList.toggle('on',x===b));render();};
   tabsEl.appendChild(b);
 });
-
-document.querySelectorAll('#mainSeg button').forEach(b=>{
-  b.onclick=()=>{state.main=b.dataset.m;document.querySelectorAll('#mainSeg button').forEach(x=>x.classList.toggle('on',x===b));render();};
-});
-document.querySelectorAll('#timeSeg button').forEach(b=>{
-  b.onclick=()=>{state.time=b.dataset.t;document.querySelectorAll('#timeSeg button').forEach(x=>x.classList.toggle('on',x===b));render();};
-});
+document.querySelectorAll('#mainSeg button').forEach(b=>b.onclick=()=>{state.main=b.dataset.m;document.querySelectorAll('#mainSeg button').forEach(x=>x.classList.toggle('on',x===b));render();});
+document.querySelectorAll('#timeSeg button').forEach(b=>b.onclick=()=>{state.time=b.dataset.t;document.querySelectorAll('#timeSeg button').forEach(x=>x.classList.toggle('on',x===b));render();});
 const coverBtn=document.getElementById('coverBtn');
 coverBtn.onclick=()=>{state.covered=!state.covered;coverBtn.classList.toggle('on',state.covered);render();};
 document.getElementById('q').addEventListener('input',e=>{state.q=e.target.value.toLowerCase().trim();render();});
 
-const grid=document.getElementById('grid');
-const empty=document.getElementById('empty');
-const countEl=document.getElementById('count');
-
+const grid=document.getElementById('grid'),empty=document.getElementById('empty'),countEl=document.getElementById('count');
 function match(p){
   if(state.cat!=='all' && p.c!==state.cat) return false;
   if(state.main!=='all' && p.m!==state.main) return false;
   if(state.time!=='all' && p.t!==state.time && p.t!=='любое') return false;
   if(state.covered && p.w==='открытое') return false;
-  if(state.q){
-    const hay=(p.n+' '+p.d+' '+p.a+' '+p.g.join(' ')).toLowerCase();
-    if(!hay.includes(state.q)) return false;
-  }
+  if(state.q){const hay=(p.n+' '+p.d+' '+p.a+' '+p.g.join(' ')).toLowerCase();if(!hay.includes(state.q))return false;}
   return true;
 }
-
 function card(p){
-  const tags=p.g.map(t=>`<span class="tg">${t}</span>`).join('');
+  const tags=p.g.slice(0,5).map(t=>`<span class="tg">${t}</span>`).join('');
+  const book=p.u?`<a class="book" href="${p.u}" target="_blank" rel="noopener">Сайт ↗</a>`:'';
+  const dateBadge=p.date?`<span class="b date">📅 ${p.date}</span>`:'';
   return `<div class="card">
-    <div class="badges">
+    <div class="badges">${dateBadge}
       <span class="b m-${p.m}">${MAIN_LABEL[p.m]}</span>
       <span class="b w-${p.w}">${W_ICON[p.w]} ${p.w}</span>
-      <span class="b tm">${p.t==='любое'?'∞ день/вечер':(p.t==='день'?'🕐 день':'🌆 вечер')}</span>
+      <span class="b tm">${p.t==='любое'?'∞':(p.t==='день'?'🕐 день':'🌆 вечер')}</span>
     </div>
     <h4>${p.n}</h4>
     <p class="desc">${p.d}</p>
@@ -566,10 +960,9 @@ function card(p){
       <div><span class="ic">📍</span><span>${p.a}</span></div>
       <div><span class="ic">🕑</span><span class="price">${p.p}</span></div>
     </div>
-    <div class="tags">${tags}</div>
+    <div class="row-bot"><div class="tags">${tags}</div>${book}</div>
   </div>`;
 }
-
 function render(){
   const list=PLACES.filter(match);
   grid.innerHTML=list.map(card).join('');
